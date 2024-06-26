@@ -10,15 +10,15 @@ export default function Projects() {
         <h2>Projects</h2>
         <ul className="projects-list">
           <li>
-            <a href="https://github.com/ZhanXiang136/PokemonGame">
-              <img id='pokemon-image' src={PokemonMenu} 
+            <a href="https://github.com/ZhanXiang136/PokemonGame" alt='Pokemon Battle'>
+              <img id='pokemon-image' src={PokemonMenu} alt='Pokemon Battle'
               onMouseEnter={() => {document.querySelector("#pokemon-image").src = PokemonBattle}} 
               onMouseLeave={() => {document.querySelector("#pokemon-image").src = PokemonMenu}}/>
               <h3>Pokemon Battle Simulator</h3>
             </a>
           </li>
           <li>
-            <a href="https://github.com/dhuang6334/Code-Overflow">
+            <a href="https://github.com/dhuang6334/Code-Overflow" alt="Maze Runner">
               <img id='maze' src={CodeOverFlowMaze} alt="Project 2" 
               onMouseEnter={() => {document.querySelector("#maze").src = CodeOverFlowMazeSample}} 
               onMouseLeave={() => {document.querySelector("#maze").src = CodeOverFlowMaze}}/>
@@ -26,7 +26,7 @@ export default function Projects() {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" alt='None'>
               <img src="https://via.placeholder.com/300x200.png?text=Project+3" alt="Project 3" />
               <h3>Project 3</h3>
             </a>
