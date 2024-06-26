@@ -26,7 +26,7 @@ export default function Projects() {
             </a>
           </li>
           <li>
-            <a href="#" alt='None'>
+            <a href="https://zhanxiangzheng.me" alt='None'>
               <img src="https://via.placeholder.com/300x200.png?text=Project+3" alt="Project 3" />
               <h3>Project 3</h3>
             </a>
