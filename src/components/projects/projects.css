@@ -1,0 +1,38 @@
+.projects {
+  padding: 50px;
+  text-align: center;
+}
+  
+.projects h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.projects-list {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.projects-list li {
+  border: 1px solid #444;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.projects-list li a {
+  display: block;
+  position: relative;
+}
+
+.projects-list li a img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.projects-list li a h3 {
+  background-color: rgba(0,0,0,0.8);
+  bottom: 0;
+  color: #fff;
+}

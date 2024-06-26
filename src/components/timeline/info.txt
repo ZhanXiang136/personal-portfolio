@@ -1,0 +1,28 @@
+
+Coding Compeition
+2023 picoCTF - CMU Cybersecurity Competition
+Hackathlon - Techcode
+2022 High School Coding Compeition - Cornell Engineering
+2023 High School Cdoing Compet
+
+Web Development
+Purpose Made this Website
+
+
+2016 - 2019 Middle School
+Programming with Scratch
+InformationL Introduction to Programming
+Developt what 
+
+Developed effective microservices and web services and created a series of unit tests to ensure that the projects passed all quality benchmarks
+Worked with a team of coders to write maintainable code and maintain existing software to improve performance and fix bugs
+
+CareerwiseNY CERTIFICATE OF COMPLETION, Lockheed Martin's 2022 CodeQuest NJ/NY 3rd Place, Cornell Tech's 2023 High School Coding Competition, Cornell Tech's 2022 High School Coding Competition, CMU's 2023 PicoCTF Coding Competition, TechCode's 2022 Code Overflow Hackathon
+
+Highlight text rgb(226 232 240/var(--tw-text-opacity))
+Background rgb(15 23 42/var(--tw-bg-opacity))
+
+Background Highlight rgb(19 78 74/var(--tw-text-opacity)) Blue
+Text Color rgb(94 234 212/var(--tw-bg-opacity))
+
+Text Color rgba(59,130,246,.5)
