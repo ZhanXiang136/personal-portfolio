@@ -1,38 +1,29 @@
-section.landing .hero {
-    background-image: url("../../assets/cyberpunk-bg.jpg");
-    background-size: cover;
-    background-position: center center; 
-    display: flex;
-    height: calc(100vh - 50px);
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+.landing {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    
 }
-
-
-section.landing .hero-content {
+.center {
+    position: absolute;
     text-align: center;
-}
-
-section.landing .hero h1 {
-    font-size: 100px;
-    color: #000;
-    margin: 0px;
-    text-shadow: 
-            -2px 2px #ef3550,
-            -4px 4px #f48fb1,
-            -6px 6px #7e57c2,
-            -8px 8px #2196f3,
-            -10px 10px #26c6da,
-            -12px 12px #43a047,
-            -14px 14px #eeff41,
-            -16px 16px #f9a825,
-            -18px 18px #ff5722;
-}
-
-section.landing .hero p {
-    font-size: 32px;
-    margin-bottom: 30px;
+    width: 40vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    top: 25vh; 
     color: white;
+    z-index: 2;
+    color: rgb(226 232 240);
+    font-style: sans-serif;
+    font-size: 72px;
+    background: -webkit-linear-gradient(#2B2974, #FFBDBA, #4FA5E4, #E14BC9,#151149);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 
+.spline {
+    position: absolute;
+    bottom: 2vh;
+    width: 100vw;
+}
