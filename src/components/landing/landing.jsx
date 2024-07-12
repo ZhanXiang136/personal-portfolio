@@ -11,11 +11,11 @@ export default function Landing() {
                         autoStart: true,
                         loop: true,
                         delay: 80,
-                        strings: ["Hello! I'm Zhan Xiang Zheng", "I'm an inspiring AI and Game Developer"]
+                        strings: ["Hello! I'm Zhan Xiang Zheng", "I'm an inspiring AI/Game Developer"]
                     }}
                 />
             </div>
-            < Home />
+            <Home />
         </section>
     )
 }

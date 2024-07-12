@@ -13,9 +13,9 @@ export default function App() {
     useEffect(() => {
         setTimeout(() => setLoading(false), 3300)
     }, [])
-    if (loading) {
-        return <Loading/>
-    }
+    // if (loading) {
+    //     return <Loading/>
+    // }
   return (
     <div className="App">
       <Header />
