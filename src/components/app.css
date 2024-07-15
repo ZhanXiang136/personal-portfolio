@@ -34,3 +34,7 @@
 *, *:before, *:after {
 	box-sizing: inherit;
 }
+
+.info-text {
+  color: var(--text-color-info)
+}

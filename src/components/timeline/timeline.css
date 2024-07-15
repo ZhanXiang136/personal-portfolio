@@ -1,22 +1,5 @@
 .timeline {
 	--tw-bg-opacity: 1;
-	background-color: rgb(38 38 38 / var(--tw-bg-opacity));
-}
-
-.layer {
-	display: flex;
-	height: 12rem;
-	align-items: center;
-	justify-content: center;
-}
-
-.timeline-card {
-	position: relative;
-	height: 450px;
-	width: 450px;
-	overflow: hidden;
-	--tw-bg-opacity: 1;
-  	background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
 .motion {
@@ -26,9 +9,8 @@
 
 .horizontal-scrolling {
 	position: relative;
-	height: 300vh;
+	height: 400vh;
 	--tw-bg-opacity: 1;
-	background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
 .in-place {
@@ -40,21 +22,15 @@
 	overflow: hidden;
 }
 
-
-.group:hover .group-hover\:scale-110 {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.timeline-card-overlay {
-	position: absolute;
-	inset: 0px;
-	z-index: 0;
-	transition-property: transform;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 150ms;
-	transition-duration: 300ms;
+.timeline-card {
+	/* background-color: rgb(47, 0, 255); */
+	position: relative;
+	height: 450px;
+	width: 50vw;
+	margin-left: 10vw;
+	margin-right: 5vw;
+	overflow: hidden;
+	--tw-bg-opacity: 1;
 }
 
 .timeline-card-inner {
@@ -64,20 +40,112 @@
 	place-content: center;
 }
 
-.card-text {
-	background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-	--tw-gradient-from: rgb(255 255 255 / 0.2) var(--tw-gradient-from-position);
-	--tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-	--tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-	padding: 2rem;
-	font-size: 3.75rem;
-	line-height: 1;
-	font-weight: 900;
-	text-transform: uppercase;
-	--tw-text-opacity: 1;
-  	color: rgb(255 255 255 / var(--tw-text-opacity));
-	--tw-backdrop-blur: blur(16px);
-  	-webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  	backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+.timeline-on-screen {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 3s ease-out;
+}
+
+.timeline-off-screen {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 3s ease-out;
+}
+
+.ag-courses-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 30px 20px;
+	background-color: var(--text-container);
+	overflow: hidden;
+	position: relative;
+
+	-ms-flex-preferred-size: calc(33.33333% - 30px);
+	flex-basis: calc(33.33333% - 30px);
+	margin: 0 15px 30px;
+	border-radius: 30px;
+
+	transition: flex-basis 5s ease-out;
+}
+
+.ag-courses-item:hover {
+	flex-basis: calc(50% - 30px);
+}
+
+.ag-courses-item:hover,
+.ag-courses-item:hover .ag-courses-item_date {
+	text-decoration: none;
+	color: #FFF;
+}
+
+.ag-courses-item:hover,
+.ag-courses-item:hover .ag-courses-item_title {
+	text-decoration: none;
+	color: #FFF;
+}
+
+.ag-courses-item:hover .ag-courses-item_bg {
+	-webkit-transform: scale(10);
+	-ms-transform: scale(10);
+	transform: scale(20);
+}
+
+.ag-courses-item_title {
+	min-height: 87px;
+	margin: 0 0 25px;
+
+	overflow: hidden;
+
+	font-weight: bold;
+	font-size: 30px;
+	color: var(--text-color-main);
+
+	z-index: 2;
+	position: relative;
+}
+
+.ag-courses-item_content {
+
+	overflow: hidden;
+
+	font-weight: bold;
+	font-size: 30px;
+	color: #FFF;
+
+	z-index: 2;
+	position: relative;
+}
+
+.ag-courses-item_date-box {
+	font-size: 18px;
+	color: #FFF;
+
+	z-index: 2;
+	position: relative;
+}
+
+.ag-courses-item_date {
+	font-weight: bold;
+	color: #f9b234;
+
+	-webkit-transition: color .5s ease;
+	-o-transition: color .5s ease;
+	transition: color .5s ease
+}
+
+.ag-courses-item_bg {
+	height: 128px;
+	width: 128px;
+
+	z-index: 1;
+	position: absolute;
+	top: -75px;
+	right: -75px;
+
+	border-radius: 50%;
+
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
 }
