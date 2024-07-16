@@ -2,15 +2,8 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import "./timeline.css";
 
-const Timeline = () => {
-  return (
-    <div className="timeline">
-      <HorizontalScrollCarousel />
-    </div>
-  );
-};
 
-const HorizontalScrollCarousel = () => {
+const Timeline = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -19,9 +12,9 @@ const HorizontalScrollCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="horizontal-scrolling">
-      <div className="in-place">
-        <motion.div style={{ x }} className="motion">
+    <section ref={targetRef} style={{height: (cards.length*150).toString()+"vh"}} className="timeline">
+      <div className="timeline-scrolling">
+        <motion.div style={{ x }} className="timeline-motion">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
           })}
@@ -103,9 +96,7 @@ const Card = ({ card }) => {
           <div className="timeline-content">
             {hover
               ? card.content.map((card) => {
-                  return (
-                    <div style={{fontSize: "1.6rem"}}>{card}</div>
-                  )
+                  return <div style={{ fontSize: "1.6rem" }}>{card}</div>;
                 })
               : null}
           </div>
@@ -130,30 +121,35 @@ const cards = [
     title: "Software Engineer Major",
     id: 1,
     date: "SEP 2019 - JUN 2023 ",
-    content:
-      ["As a Software Engineer at BTHS, I greatly benefited from the wide assortment the school finds for use and special curriculum designed for our chosen major."],
+    content: [
+      "As a Software Engineer at BTHS, I greatly benefited from the wide assortment the school finds for use and special curriculum designed for our chosen major.",
+    ],
   },
   {
-    content:
-      ["At CWNY I learned about essential job-readiness skills, and the motivation to pursue career and education goals."],
+    content: [
+      "At CWNY I learned about essential job-readiness skills, and the motivation to pursue career and education goals.",
+    ],
     title: "Apprentice Trainee",
     company: "CareerWise New York",
     date: "JUL 2021 - OCT 2021",
     id: 2,
   },
   {
-    content:
-      [
-        "– Developed and deployed a chat-bot that connects the company’s messaging app with team services and utilizes the agile methodology and company software to reduce the need for on-call support by relaying client system status and answering client questions",
-        "– Developed an API that enabled data exchange between different company systems"
-      ],
+    content: [
+      "– Developed and deployed a chat-bot that connects the company’s messaging app with team services and utilizes the agile methodology and company software to reduce the need for on-call support by relaying client system status and answering client questions",
+      "– Developed an API that enabled data exchange between different company systems",
+    ],
     title: "Junior Coder",
     company: "JPMorgan Chase & Co.",
     date: "OCT 2021 - JUL 2023",
     id: 3,
   },
   {
-    content: ["Relevant Courses", "– Computer Science: Discrete Mathematics, Computer Science A, Data Structures, System Fundamental, Theory of Computation", "– Math: Calculus I/II/III, Linear Algebra, Graph Theory, Probability and Statistics"],
+    content: [
+      "Relevant Courses",
+      "– Computer Science: Discrete Mathematics, Computer Science A, Data Structures, System Fundamental, Theory of Computation",
+      "– Math: Calculus I/II/III, Linear Algebra, Graph Theory, Probability and Statistics",
+    ],
     title:
       "Bachelor of Science in Computer Science w/ Honors and Applied Mathematics and Statistics",
     company: "Stony Brook Univeristy",
@@ -161,29 +157,27 @@ const cards = [
     id: 4,
   },
   {
-    content:
-      [
-        "– Performed computer system maintenance throughout the campus",
-        "– Inspected and tested equipments to ensure optimal performance and safety standards",
-        "– Resolved customer inquiries in a timely manner"
-      ],
+    content: [
+      "– Performed computer system maintenance throughout the campus",
+      "– Inspected and tested equipments to ensure optimal performance and safety standards",
+      "– Resolved customer inquiries in a timely manner",
+    ],
     title: "IT Technician",
     company: "Stony Brook Univeristy",
     date: "OCT 2023 - Present",
     id: 5,
   },
   {
-    content:
-        [
-        "Staff Coordinator",
-        "– Gathered, managed, and trained over 25+ volunteers for the events",
-        "– Inspected and tested equipments to ensure optimal performance and safety standards",
-        "– Resolved customer inquiries in a timely manner",
-        "",
-        "Treasurer",
-        "- Manage the convention's budget",
-        "- Perform various executive tasks and logistics for the convention"
-        ],
+    content: [
+      "Staff Coordinator",
+      "– Gathered, managed, and trained over 25+ volunteers for the events",
+      "– Inspected and tested equipments to ensure optimal performance and safety standards",
+      "– Resolved customer inquiries in a timely manner",
+      "",
+      "Treasurer",
+      "- Manage the convention's budget",
+      "- Perform various executive tasks and logistics for the convention",
+    ],
     title: "Staff Coordinator 2024, Treasurer 2025",
     company: "Stony Brook Univeristy Brook Con",
     date: "JAN 2023 - Present",

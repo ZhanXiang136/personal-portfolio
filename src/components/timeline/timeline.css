@@ -1,18 +1,13 @@
-.timeline-card {
-	width: 100vw;
+.timeline {
+	position: relative;
 }
 
-.motion {
+.timeline-motion {
 	display: flex;
 	gap: 1rem;
 }
 
-.horizontal-scrolling {
-	position: relative;
-	height: 500vh;
-}
-
-.in-place {
+.timeline-scrolling {
 	position: sticky;
 	top: 0px;
 	display: flex;

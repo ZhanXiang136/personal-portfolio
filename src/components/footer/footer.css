@@ -11,7 +11,7 @@ footer section.card {
     height: 450px;
     width: 750px;
     padding: 30px;
-    background-color: #111;
+    background-color: var(--blue-text-container);
     border-radius: 50px;
     overflow: hidden;
 }
@@ -19,7 +19,7 @@ footer section.card {
 input[type="text"],
 input[type="email"],
 input[type="message"] {
-  background-color: #fff;
+  background-color: var(--blue-text-info);
   border: none;
   border-radius: 5px;
   color: #333;
@@ -27,6 +27,7 @@ input[type="message"] {
   padding: 10px;
   width: 100%;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 input[type="text"]:focus,
@@ -68,10 +69,10 @@ div .svg-logo {
 }
 
 button {
-    background-color: #1f6feb;
+    background-color: var(--blue-background);
     border: none;
     border-radius: 5px;
-    color: #fff;
+    color: var(--blue-text-main);
     cursor: pointer;
     font-size: 16px;
     padding: 10px 20px;
@@ -79,11 +80,10 @@ button {
   }
   
   button:hover {
-    background-color: #005fbf;
+    background-color: var(--blue-text-second);
   } 
 
   a {
-    color: #fff;
     text-decoration: none;
   }
   
