@@ -73,9 +73,9 @@
 }
 
 .timeline-item:hover .timeline-circle-bg {
-	-webkit-transform: scale(10);
-	-ms-transform: scale(10);
-	transform: scale(20);
+	-webkit-transform: scale(25);
+	-ms-transform: scale(25);
+	transform: scale(25);
 }
 
 .timeline-title {

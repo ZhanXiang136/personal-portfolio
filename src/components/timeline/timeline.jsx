@@ -2,7 +2,6 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import "./timeline.css";
 
-
 const Timeline = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -12,7 +11,11 @@ const Timeline = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <section ref={targetRef} style={{height: (cards.length*150).toString()+"vh"}} className="timeline">
+    <section
+      ref={targetRef}
+      style={{ height: (cards.length * 150).toString() + "vh" }}
+      className="timeline"
+    >
       <div className="timeline-scrolling">
         <motion.div style={{ x }} className="timeline-motion">
           {cards.map((card) => {
@@ -58,13 +61,15 @@ const Card = ({ card }) => {
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    const currentElement = elementRef.current;
+
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, []);
@@ -95,8 +100,12 @@ const Card = ({ card }) => {
           </div>
           <div className="timeline-content">
             {hover
-              ? card.content.map((card) => {
-                  return <div style={{ fontSize: "1.6rem" }}>{card}</div>;
+              ? card.content.map((content, index) => {
+                  return (
+                    <div key={index} style={{ fontSize: "1.6rem" }}>
+                      {content}
+                    </div>
+                  );
                 })
               : null}
           </div>
