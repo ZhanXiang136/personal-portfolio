@@ -1,0 +1,16 @@
+.skill {
+  width: 40vw;
+  display: block;
+  margin: 0 auto;
+  background-color: var(--blue-text-container);
+  border: 1px solid var(--blue-text-second);
+  height: max(100vh);
+}
+
+canvas {
+  border-radius: 20px;
+}
+
+.word {
+  background-color: aliceblue;
+}

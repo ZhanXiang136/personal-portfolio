@@ -13,5 +13,11 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  color: var(--blue-text-main)
+  color: var(--blue-text-main);
+  font-family: Libre Franklin;
 }
+
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 768px) {}

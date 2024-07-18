@@ -37,3 +37,24 @@
 .info-text {
   color: var(--text-color-info)
 }
+
+button {
+  background-color: var(--blue-background);
+  border: none;
+  border-radius: 15px;
+  color: var(--blue-text-main);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  border-color: var(--blue-text-main);
+  border: 1px solid;
+}
+
+button:hover {
+  background-color: var(--blue-text-second);
+} 
+
+a {
+  text-decoration: none;
+}

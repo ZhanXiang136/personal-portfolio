@@ -1,0 +1,36 @@
+.about {
+  display: flex;
+  font-size: 1rem;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.about-photo {
+  padding: 0 3rem;
+}
+
+.about-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50px;
+}
+
+.about-content {
+  padding: 0 3rem;
+  width: min(100vw, 750px);
+}
+
+.about-h1 {
+  margin: 15px 0;
+}
+
+.about-h2 {
+  margin: 0;
+  color: var(--blue-text-second);
+}
+
+.about-info {
+  color: var(--blue-text-info);
+}
