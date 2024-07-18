@@ -1,5 +1,7 @@
+import 'normalize.css'
 import "./about.css";
 import React from "react";
+import Mugshot from "../../assets/mugshot.jpeg"
 
 export default function About() {
   const openPDF = () => {
@@ -14,7 +16,7 @@ export default function About() {
       <div className="about-photo">
         <img
           className="about-image"
-          src="https://placehold.jp/150x150.png"
+          src={Mugshot}
           alt="my-image"
         ></img>
       </div>

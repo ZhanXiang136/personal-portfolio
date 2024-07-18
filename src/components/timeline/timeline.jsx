@@ -102,7 +102,7 @@ const Card = ({ card }) => {
             {hover
               ? card.content.map((content, index) => {
                   return (
-                    <div key={index} style={{ fontSize: "1.6rem" }}>
+                    <div key={index} className="timeline-card-info">
                       {content}
                     </div>
                   );

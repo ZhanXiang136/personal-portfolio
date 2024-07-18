@@ -58,3 +58,17 @@ button:hover {
 a {
   text-decoration: none;
 }
+
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  color: var(--blue-text-second);
+}
+
+p {
+  color: var(--blue-text-info);
+}

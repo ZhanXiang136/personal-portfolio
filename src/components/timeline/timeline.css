@@ -61,7 +61,7 @@
 }
 
 .timeline-item:hover {
-	flex-basis: 100%
+	flex-basis: 100%;
 }
 
 .timeline-item:hover,
@@ -85,7 +85,6 @@
 	overflow: hidden;
 
 	font-weight: bold;
-	font-size: 2.5rem;
 	color: var(--blue-text-main);
 
 	z-index: 2;
@@ -114,11 +113,13 @@
 }
 
 .timeline-title_company {
-	color: var(--blue-text-main)
+	color: var(--blue-text-main);
+	font-size: 2rem;
 }
 
 .timeline-title_title {
 	color: var(--blue-text-second);
+	font-size: 1.6rem;
 }
 
 .timeline-circle-bg {
@@ -135,4 +136,17 @@
 	-webkit-transition: all .5s ease;
 	-o-transition: all .5s ease;
 	transition: all .5s ease;
+}
+
+.timeline-card-info {
+	font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 768px) {
+	.timeline-card {
+		width: 85vw;
+		height: 550px;
+		margin-left: 6vw;
+		margin-right: 3vw;
+	}
 }

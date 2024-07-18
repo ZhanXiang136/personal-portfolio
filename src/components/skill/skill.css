@@ -1,16 +1,54 @@
 .skill {
-  width: 40vw;
-  display: block;
-  margin: 0 auto;
-  background-color: var(--blue-text-container);
-  border: 1px solid var(--blue-text-second);
-  height: max(100vh);
+  display: flex;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-canvas {
+.skill-content {
+  padding: 0 3rem;
+  padding-right: 6rem;
+  width: 40vw;
+}
+
+.skill-canvas {
+  width: 40vw;
   border-radius: 20px;
+  height: max(50vh);
+  background-size: cover;
+  position: relative;
+}
+
+.skill-canvas::before {
+  content: "";
+  background-image: url("../../assets/neon-bg.avif");
+  background-size: cover;
+  background-position: center; /* Adjust as needed */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.8; 
+  z-index: -1;
+  border-radius: 30px;
 }
 
 .word {
   background-color: aliceblue;
+}
+
+@media only screen and (max-width: 1000px) {
+  .skill-content {
+    width: auto;
+  }
+
+  .skill-canvas {
+    width: 80vw;
+    height: max(30vh);
+    margin: 1rem;
+  }
 }

@@ -49,7 +49,7 @@ const Navbar = () => {
           <Element name={nav.name}>
             {nav.name !== "landing" ? (
               <div className="header-container">
-                <h1 className="header-title">{nav.content}</h1>
+                <h1 className="header-title">{nav.name}</h1>
                 <div className="header-line"></div>
               </div>
             ) : null}
@@ -82,8 +82,8 @@ export default Navbar;
 const navs = [
   { name: "landing", content: "Landing", id: 1, comp: <Landing /> },
   { name: "about", content: "About", id: 2, comp: <About /> },
-  { name: "skill", content: "Skill", id: 3, comp: <Skill /> },
+  { name: "skills/accolades", content: "Skill", id: 3, comp: <Skill /> },
   { name: "timeline", content: "Timeline", id: 4, comp: <Timeline /> },
-  { name: "project", content: "Project", id: 5, comp: <Projects /> },
+  { name: "projects", content: "Project", id: 5, comp: <Projects /> },
   { name: "footer", content: "Contact", id: 6, comp: <Footer /> },
 ];
