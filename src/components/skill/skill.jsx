@@ -5,9 +5,21 @@ const Skill = () => {
   return (
     <div className="skill">
       <div className="skill-content">
-        <h1>The </h1>
-        <h2>s</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu volutpat odio facilisis mauris sit amet massa vitae tortor. Nunc mi ipsum faucibus vitae aliquet. Vitae aliquet nec ullamcorper sit amet risus nullam eget. Eu sem integer vitae justo eget magna fermentum iaculis eu. Mauris commodo quis imperdiet massa tincidunt. Faucibus purus in massa tempor nec. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Et netus et malesuada fames ac turpis egestas integer. Faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Libero justo laoreet sit amet cursus sit amet dictum. Non sodales neque sodales ut etiam. Pellentesque habitant morbi tristique senectus. Leo urna molestie at elementum eu facilisis sed. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Egestas erat imperdiet sed euismod nisi porta lorem mollis.</p>
+        <h1>The Story So Far</h1>
+        <h2>Over the years of creating various apps, taking cs courses in and out the classroom, and interning at different places and learned and recieved</h2>
+        <p>
+          Languages/Frameworks
+          <ul>
+            <li>Python</li>
+            <li>NumPy/Pandas</li>
+            <li>FASTAPI</li>
+            <li>Flask</li>
+            <li>HTML/CSS</li>
+            <li>JS/React</li>
+            <li>Java</li>
+            <li>C/C++</li>
+          </ul>
+        </p>
       </div>
       <div className="skill-canvas">
         <SkillContainer />
