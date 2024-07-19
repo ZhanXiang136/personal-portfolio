@@ -1,36 +1,48 @@
-// src/components/FadeInOutComponent.js
+import React, { useState, useEffect, useRef } from 'react';
+import './fadeInOutComponent.css';
 
-import React, { useState, useEffect, useRef } from "react";
-import "./fadeInOutComponent.css";
-
-const FadeInOutComponent = ({ children }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const FadeComponent = ({ direction, children }) => {
+  const [isVisible, setIsVisible] = useState(true); // Start as visible
+  const [animationClass, setAnimationClass] = useState('');
   const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          setAnimationClass(`fade-in-${direction}`);
+        } else {
+          setAnimationClass(`fade-out-${direction}`);
+          // Wait for animation to complete before setting display: none
+          setTimeout(() => setIsVisible(false), 1000); // Match animation duration
+        }
       },
-      { threshold: 0.1 } // Adjust this value to determine when the element is considered visible
+      { threshold: (direction === "general" ? 0.5 : 0.1) } // Adjust as needed
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentElement = ref.current;
+
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
-  }, []);
+  }, [direction]);
 
   return (
-    <div ref={ref} className={isVisible ? "fade-in" : "fade-out"}>
+    <div
+      ref={ref}
+      className={`${animationClass} ${!isVisible}`}
+      style={{ position: 'relative' }}
+    >
       {children}
     </div>
   );
 };
 
-export default FadeInOutComponent;
+export default FadeComponent;

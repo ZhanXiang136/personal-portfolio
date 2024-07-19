@@ -9,9 +9,10 @@ import Footer from "../footer/footer";
 import "./navbar.css";
 import StickyContactInfo from "../leftBar/leftBar";
 import WindowDimensions from "../windowDimention/windowDimention";
+import FadeComponent from "../fadeInOutComponent/fadeInOutComponent";
 
 const Navbar = () => {
-  const { height, width } = WindowDimensions(); 
+  const { height } = WindowDimensions();
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -41,21 +42,26 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar-container">
-        <nav className={"navbar" + (scrollPosition !== 0 ? " navbar-down" : "")}>
+        <nav
+          className={"navbar" + (scrollPosition !== 0 ? " navbar-down" : "")}
+        >
           {navs.map((nav) => {
             return <Nav nav={nav} key={nav.id} />;
           })}
         </nav>
       </div>
-      {scrollPosition >= height*.6 ? <StickyContactInfo /> : null}
+      {scrollPosition >= height * 0.6 ? <StickyContactInfo /> : null}
       {navs.map((nav) => {
         return (
           <Element name={nav.name}>
             {nav.name !== "landing" ? (
-              <div className="header-container">
-                <h1 className="header-title">{nav.name}</h1>
-                <div className="header-line"></div>
-              </div>
+              <FadeComponent direction="up">
+                {" "}
+                <div className="header-container">
+                  <h1 className="header-title">{nav.name}</h1>
+                  <div className="header-line"></div>
+                </div>
+              </FadeComponent>
             ) : null}
             {nav.comp}
           </Element>
@@ -89,5 +95,5 @@ const navs = [
   { name: "skills/accolades", content: "Skill", id: 3, comp: <Skill /> },
   { name: "timeline", content: "Timeline", id: 4, comp: <Timeline /> },
   { name: "projects", content: "Project", id: 5, comp: <Projects /> },
-  { name: "footer", content: "Contact", id: 6, comp: <Footer /> },
+  { name: "contact", content: "Contact", id: 6, comp: <Footer /> },
 ];

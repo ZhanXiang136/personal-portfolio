@@ -9,12 +9,16 @@ footer {
 }
 
 footer section.card {
-    height: 450px;
+    height: 380px;
     width: min(750px, 80vw);
     padding: 30px;
     background-color: var(--blue-text-container);
     border-radius: 50px;
     overflow: hidden;
+}
+
+.footer-header {
+    margin-bottom: 20px;
 }
 
 input[type="text"],
@@ -26,7 +30,7 @@ input[type="message"] {
   color: #333;
   font-size: 16px;
   padding: 10px;
-  width: 100%;
+  width: calc(100% - 20px);
   margin-bottom: 20px;
   margin-top: 10px;
 }

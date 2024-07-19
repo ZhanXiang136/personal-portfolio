@@ -1,6 +1,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./timeline.css";
+import FadeComponent from "../fadeInOutComponent/fadeInOutComponent";
 
 const Timeline = () => {
   const targetRef = useRef(null);
@@ -37,7 +38,6 @@ const color = [
 ];
 
 const Card = ({ card }) => {
-  const [isOnScreen, setIsOnScreen] = useState(false);
   const [hover, setHover] = useState(false);
 
   const handleMouseEnter = () => {
@@ -48,77 +48,46 @@ const Card = ({ card }) => {
     setHover(false);
   };
 
-  const elementRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsOnScreen(entry.isIntersecting);
-      },
-      {
-        root: null, // null means the viewport
-        threshold: 0.5, // percentage of element visibility (0.1 means 10%)
-      }
-    );
-
-    const currentElement = elementRef.current;
-
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
-
-    return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
-    };
-  }, []);
-
   return (
-    <div
-      key={card.id}
-      ref={elementRef}
-      className={
-        "timeline-card " +
-        (isOnScreen ? "timeline-on-screen" : "timeline-off-screen")
-      }
-    >
-      <div className="timeline-card-inner">
-        <div
-          className="timeline-item"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+    <FadeComponent direction="general">
+      <div key={card.id} className={"timeline-card"}>
+        <div className="timeline-card-inner">
           <div
-            className="timeline-circle-bg"
-            style={{ backgroundColor: color[(card.id - 1) % color.length] }}
-          ></div>
+            className="timeline-item"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div
+              className="timeline-circle-bg"
+              style={{ backgroundColor: color[(card.id - 1) % color.length] }}
+            ></div>
 
-          <div className="timeline-title">
-            <div className="timeline-title_company">{card.company}</div>
-            <div className="timeline-title_title">{card.title}</div>
-          </div>
-          <div className="timeline-content">
-            {hover
-              ? card.content.map((content, index) => {
-                  return (
-                    <div key={index} className="timeline-card-info">
-                      {content}
-                    </div>
-                  );
-                })
-              : null}
-          </div>
+            <div className="timeline-title">
+              <div className="timeline-title_company">{card.company}</div>
+              <div className="timeline-title_title">{card.title}</div>
+            </div>
+            <div className="timeline-content">
+              {hover
+                ? card.content.map((content, index) => {
+                    return (
+                      <div key={index} className="timeline-card-info">
+                        {content}
+                      </div>
+                    );
+                  })
+                : null}
+            </div>
 
-          <br />
+            <br />
 
-          <div className="timeline-datebox">
-            Start: &nbsp;
-            <span className="timeline-date">{card.date}</span>
+            <div className="timeline-datebox">
+              Start: &nbsp;
+              <span className="timeline-date">{card.date}</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </FadeComponent>
   );
 };
 

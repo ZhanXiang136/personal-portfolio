@@ -57,3 +57,9 @@
   fill: white;
   transform: rotate(360deg);
 }
+
+@media only screen and (max-width: 950px) {
+  .left-bar {
+    display: none;
+  }
+}
