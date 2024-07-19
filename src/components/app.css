@@ -12,20 +12,20 @@
 }
 
 button {
-  background-color: var(--blue-background);
+  background-color: rgba(45,212,191,.1);
   border: none;
-  border-radius: 15px;
+  border-radius: 50px;
   color: var(--blue-text-main);
   cursor: pointer;
   font-size: 16px;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
-  border-color: var(--blue-text-main);
-  border: 1px solid;
+  font-weight: 500;
 }
 
 button:hover {
   background-color: var(--blue-text-second);
+  color: white;
 } 
 
 a {
