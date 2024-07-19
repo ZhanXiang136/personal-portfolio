@@ -5,21 +5,41 @@ const Skill = () => {
   return (
     <div className="skill">
       <div className="skill-content">
-        <h1>The Story So Far</h1>
-        <h2>Over the years of creating various apps, taking cs courses in and out the classroom, and interning at different places and learned and recieved</h2>
-        <p>
-          Languages/Frameworks
-          <ul>
-            <li>Python</li>
-            <li>NumPy/Pandas</li>
-            <li>FASTAPI</li>
-            <li>Flask</li>
-            <li>HTML/CSS</li>
-            <li>JS/React</li>
-            <li>Java</li>
-            <li>C/C++</li>
-          </ul>
-        </p>
+        <h1 className="skill-h1">The Story So Far</h1>
+        <h2 className="skill-h2">
+          Over the years of creating various apps, taking cs courses in and out
+          the classroom, and interning at different places and learned and
+          recieved
+        </h2>
+        <div className="skill-list-container">
+          <p className="skill-list">
+            Languages/Frameworks
+            <ul>
+              <li>Python</li>
+              <li>Java</li>
+              <li>C/C++</li>
+              <li>HTML/CSS</li>
+              <li>JS/React</li>
+              <li>React</li>
+              <li>NumPy/Pandas</li>
+              <li>Flask</li>
+              <li>FastAPI</li>
+            </ul>
+          </p>
+          <p className="skill-list">
+            Awards/Certificates
+            <ul>
+              <li>
+                GIAC Foundational Cybersecurity Technologies (GFACT) Certificate
+              </li>
+              <li>2022 Lockheed Martin’s Code Quest Winner</li>
+              <li>Careerwise Certificate of Completion</li>
+              <li>National Cyber Scholar with Honors</li>
+              <li>AP Scholar with Distinction</li>
+              <li>Dean’s List</li>
+            </ul>
+          </p>
+        </div>
       </div>
       <div className="skill-canvas">
         <SkillContainer />
@@ -33,7 +53,7 @@ const SkillContainer = () => {
 
   // Memoize the words array to prevent unnecessary re-renders
   const words = useMemo(
-    () => ["Hello", "World", "React", "Bounce", "Collision"],
+    () => ["Python", "Java", "C/C++", "HTML/CSS", "JS/React", "GFACT", "Dean's List"],
     []
   );
 
@@ -67,9 +87,10 @@ const SkillContainer = () => {
       y: spawnPoints[index].y,
       dx: (Math.random() - 0.5) * 4,
       dy: (Math.random() - 0.5) * 4,
-      color: `rgb(${Math.random() * 255},${Math.random() * 255},${
-        Math.random() * 255
-      })`, // Random color
+      // color: `rgb(${Math.random() * 255},${Math.random() * 255},${
+      //   Math.random() * 255
+      // })`, // Random color
+      color: 'rgb(27, 245, 212)',
       className: "word", // Add className 'word'
     }));
 

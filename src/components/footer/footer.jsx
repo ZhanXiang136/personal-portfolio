@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <footer id="footer">
             <section className="card">
-                <h2>Contact me</h2>
+                <h1>Contact me</h1>
                 <form>
                     <label>Name</label>
                     <input type="text" />

@@ -7,8 +7,11 @@ import Timeline from "../timeline/timeline";
 import Projects from "../projects/projects";
 import Footer from "../footer/footer";
 import "./navbar.css";
+import StickyContactInfo from "../leftBar/leftBar";
+import WindowDimensions from "../windowDimention/windowDimention";
 
 const Navbar = () => {
+  const { height, width } = WindowDimensions(); 
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -44,6 +47,7 @@ const Navbar = () => {
           })}
         </nav>
       </div>
+      {scrollPosition >= height*.6 ? <StickyContactInfo /> : null}
       {navs.map((nav) => {
         return (
           <Element name={nav.name}>

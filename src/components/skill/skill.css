@@ -14,28 +14,47 @@
   width: 40vw;
 }
 
+.skill-list-container {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.skill-list {
+  padding: 1rem;
+  margin: 0;
+}
+
+.skill-h2 {
+  font-size: 1.25rem;
+}
+
 .skill-canvas {
   width: 40vw;
-  border-radius: 20px;
   height: max(50vh);
   background-size: cover;
   position: relative;
+  background-color: #cccccc;
+  background-image: radial-gradient(
+    var(--blue-text-second),
+    var(--blue-background)
+  );
 }
 
-.skill-canvas::before {
+/* .skill-canvas::before {
   content: "";
   background-image: url("../../assets/neon-bg.avif");
   background-size: cover;
-  background-position: center; /* Adjust as needed */
+  background-position: center; 
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.8; 
+  opacity: 0.1; 
   z-index: -1;
   border-radius: 30px;
-}
+} */
 
 .word {
   background-color: aliceblue;
@@ -50,5 +69,11 @@
     width: 80vw;
     height: max(30vh);
     margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .skill-list-container {
+    display: block;
   }
 }

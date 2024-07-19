@@ -1,0 +1,59 @@
+.left-bar {
+  position: fixed;
+  left: 25px;
+  top: 40%;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-text-second);
+  font-size: 1rem;
+  font-weight: bold;
+  overflow-x: hidden;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-item {
+  writing-mode: vertical-rl;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.separator {
+  width: 2px;
+  height: 50px;
+  background-color: var(--blue-text-second);
+  margin: 20px 0;
+}
+
+.left-bar-svg-logo {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left-bar-svg-logo::after {
+  content: "";
+  height: 16rem;
+  background-color: var(--blue-text-second);
+  width: 2px;
+  margin: 0 auto;
+}
+
+.left-bar-svg-logo a svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--blue-text-second);
+  transition: transform 0.5s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.left-bar-svg-logo a svg:hover {
+  fill: white;
+  transform: rotate(360deg);
+}
