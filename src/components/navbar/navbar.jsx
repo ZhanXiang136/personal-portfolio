@@ -7,7 +7,7 @@ import Timeline from "../timeline/timeline";
 import Projects from "../projects/projects";
 import Footer from "../footer/footer";
 import "./navbar.css";
-import StickyContactInfo from "../leftBar/leftBar";
+import LeftBar from "../leftBar/leftBar";
 import WindowDimensions from "../windowDimention/windowDimention";
 import FadeComponent from "../fadeInOutComponent/fadeInOutComponent";
 
@@ -50,7 +50,7 @@ const Navbar = () => {
           })}
         </nav>
       </div>
-      {scrollPosition >= height * 0.6 ? <StickyContactInfo /> : null}
+      {scrollPosition >= height * 0.6 ? <LeftBar scroll={scrollPosition - (height * 0.6)} /> : null}
       {navs.map((nav) => {
         return (
           <Element name={nav.name}>
