@@ -114,8 +114,9 @@ const cards = [
   },
   {
     content: [
-      "– Developed and deployed a chat-bot that connects the company’s messaging app with team services and utilizes the agile methodology and company software to reduce the need for on-call support by relaying client system status and answering client questions",
-      "– Developed an API that enabled data exchange between different company systems",
+      "- Led the development of a chatbot integrating the company’s messaging app with team services, which utilized agile methodology and company software, reducing the need for on-call support by automating client system status updates and providing answers to client queries.",
+      "- Developed an API that facilitated seamless data exchange between different company systems, improving data accessibility and reducing data retrieval time.",
+      "- Presented the chatbot solution across the platform and client meetings, effectively showcasing its capabilities."
     ],
     title: "Junior Coder",
     company: "JPMorgan Chase & Co.",
@@ -125,8 +126,8 @@ const cards = [
   {
     content: [
       "Relevant Courses",
-      "– Computer Science: Discrete Mathematics, Computer Science A, Data Structures, System Fundamental, Theory of Computation",
-      "– Math: Calculus I/II/III, Linear Algebra, Graph Theory, Probability and Statistics",
+      "- Computer Science - Computer Science A, System Fundamental, Data Structures & Algorithms, Theory of Computation",
+      "– Math: Discrete Mathematics, Calculus I/II/III, Linear Algebra, Graph Theory, Probability and Statistics",
     ],
     title:
       "Bachelor of Science in Computer Science w/ Honors and Applied Mathematics and Statistics",
@@ -137,14 +138,12 @@ const cards = [
   {
     content: [
       "IT Technician Manager / AUG 2024 - PRESENT",
-      "In addition to everything done as an IT Technician:",
-      "- In charge of supplies and maintenance of computer labs and create weekly reports",
-      "- Train new hires and interns, ensuring the smooth operation of the university’s computer systems",
+      "- Managed a campus computing manager, ensuring all equipment was up-to-date and fully functional",
+      "- Trained and mentored junior IT staff, fostering a collaborative team environment and improving team performance.",
       "-----------------------------------------------------",
       "IT Technician / OCT 2023 - MAY 2024",
-      "- Maintained and troublershoot over 50+ audiovisual systems, printers, computers throuhout campus",
-      "- Solved over 20+ technical inquiries from students and staffs",
-      "- Collaborated with other campus IT department to address technical issues, and implement solutions to meet the needs of students, faculty, and staff",
+      "- Managed and maintained the IT infrastructure, including computers, printers, and various audiovisual tools.",
+      "- Coordinated and executed software and hardware upgrades, minimizing disruption to student operations.",
     ],
     title: "IT Technician, IT Technician Manager",
     company: "Stony Brook Univeristy",
@@ -154,12 +153,12 @@ const cards = [
   {
     content: [
       "Treasurer / JUN 2024 - PRESENT",
-      "- Manage convention’s budget with over 1000 attending people",
-      "- Responsible for general logistics of the convention and co-head of the convention",
-      "-----------------------------------------------------",
+      "- Managed a budget exceeding $10,000+ for a convention with over 1,000 attendees, ensuring all financial activities aligned with organizational goals and maintaining accurate records of all transactions.",
+      "- Oversaw general logistics and served as core executive of the convention, coordinating with various departments to ensure smooth execution of all activities.",
+      "-----------------------------------------------------", 
       "Staff and Security Coordinator / JAN 2024 - JUNE 2024",
-      "- Gathered, managed, and trained over 40+ volunteers for the events",
-      "- Responsible for main security and being the main point of contact for volunteers",
+      "- Recruited, trained, and managed a team of over 40 volunteers, enhancing event efficiency and ensuring all operations ran smoothly.",
+      "- Led security operations for the convention, acting as the main point of contact for volunteers and ensuring the safety and security of all attendees and staff.",
     
     ],
     title: "Staff and Security Coordinator, Treasurer",
