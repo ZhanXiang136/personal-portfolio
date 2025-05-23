@@ -11,7 +11,7 @@ export default function Landing() {
                         autoStart: true,
                         loop: true,
                         delay: 80,
-                        strings: ["Hello! I'm Zhan Xiang Zheng", "I'm an inspiring AI/Game Developer"]
+                        strings: ["Hello! I'm Z.", "I'm a software developer."]
                     }}
                 />
             </div>

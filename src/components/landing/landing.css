@@ -16,10 +16,7 @@
     color: rgb(226 232 240);
     font-style: sans-serif;
     font-size: clamp(16px, 6vw, 64px);
-    background: -webkit-linear-gradient(#2B2974, #FFBDBA, #4FA5E4, #E14BC9,#151149);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
+    background: transparent;
 }
 
 .spline {
