@@ -1,7 +1,7 @@
 import "normalize.css";
 import "./about.css";
 import React from "react";
-import Mugshot from "../../assets/mugshot.png";
+import Mugshot from "../../assets/mugshot.jpeg";
 import FadeComponent from "../fadeInOutComponent/fadeInOutComponent";
 
 export default function About() {
