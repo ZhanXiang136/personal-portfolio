@@ -28,15 +28,6 @@ const Timeline = () => {
   );
 };
 
-const color = [
-  "#8B0000",
-  "#FF8C00",
-  "#FFA500",
-  "#006400",
-  "#0A3D62",
-  "#4B0082",
-];
-
 const Card = ({ card }) => {
   const [hover, setHover] = useState(false);
 
@@ -59,9 +50,10 @@ const Card = ({ card }) => {
           >
             <div
               className="timeline-circle-bg"
-              style={{ backgroundColor: color[(card.id - 1) % color.length] }}
+              style={{
+                background: 'linear-gradient(90deg, #000046 0%, #1CB5E0 100%)',
+              }}
             ></div>
-
             <div className="timeline-title">
               <div className="timeline-title_company">{card.company}</div>
               <div className="timeline-title_title">{card.title}</div>
@@ -98,72 +90,78 @@ const cards = [
     company: "Brooklyn Technical High School",
     title: "Software Engineer Major",
     id: 1,
-    date: "SEP 2019 - JUN 2023 ",
+    date: "Sep 2019 - Jun 2023 ",
     content: [
       "As a Software Engineer at BTHS, I greatly benefited from the wide assortment the school finds for use and special curriculum designed for our chosen major.",
     ],
   },
   {
     content: [
-      "At CWNY I learned about essential job-readiness skills, and the motivation to pursue career and education goals.",
+      "Led the agile development of a chatbot and supporting API that automated system status updates, streamlined data exchange across platforms, and cut on-call support and data retrieval times—then presented the solution to stakeholders to drive adoption.",
     ],
-    title: "Apprentice Trainee",
-    company: "CareerWise New York",
-    date: "JUL 2021 - OCT 2021",
+    title: "Junior Coder",
+    company: "JPMorgan Chase & Co.",
+    date: "Oct 2021 - Jul 2023",
     id: 2,
   },
   {
     content: [
-      "- Led the development of a chatbot integrating the company’s messaging app with team services, which utilized agile methodology and company software, reducing the need for on-call support by automating client system status updates and providing answers to client queries.",
-      "- Developed an API that facilitated seamless data exchange between different company systems, improving data accessibility and reducing data retrieval time.",
-      "- Presented the chatbot solution across the platform and client meetings, effectively showcasing its capabilities."
-    ],
-    title: "Junior Coder",
-    company: "JPMorgan Chase & Co.",
-    date: "OCT 2021 - JUL 2023",
-    id: 3,
-  },
-  {
-    content: [
       "Relevant Courses",
-      "- Computer Science - Computer Science A, System Fundamental, Data Structures & Algorithms, Theory of Computation",
-      "– Math: Discrete Mathematics, Calculus I/II/III, Linear Algebra, Graph Theory, Probability and Statistics",
+      "- Computer Science - System Fundamental, Data Structures, Algorithms, Theory of Computation. Data Science, AI, Security",
+      "- Math: Discrete Mathematics, Calculus I-IV, Linear Algebra, Graph Theory, Probability Theory, Statistics",
     ],
     title:
       "Bachelor of Science in Computer Science w/ Honors and Applied Mathematics and Statistics",
     company: "Stony Brook Univeristy",
-    date: "AUG 2023 - PRESENT",
+    date: "Aug 2023 - Present",
+    id: 3,
+  },
+  {
+    content: [
+      "IT Technician Manager (Aug 2024 - Present)",
+      "Oversee the campus computing center—ensuring all hardware, software, and AV systems are up-to-date and reliable—while mentoring over a dozen junior IT staff to enhance team performance.",
+      "-----------------------------------------------------",
+      "IT Technician (Oct 2023 - MAY 2024)",
+      "Managed and maintained 100+ campus devices and audiovisual systems, leading routine software and hardware upgrades to minimize downtime and optimize user experience.",
+    ],
+    title: "IT Technician - IT Technician Manager",
+    company: "Stony Brook Univeristy",
+    date: "Oct 2023 - Present",
     id: 4,
   },
   {
     content: [
-      "IT Technician Manager / AUG 2024 - PRESENT",
-      "- Managed a campus computing manager, ensuring all equipment was up-to-date and fully functional",
-      "- Trained and mentored junior IT staff, fostering a collaborative team environment and improving team performance.",
-      "-----------------------------------------------------",
-      "IT Technician / OCT 2023 - MAY 2024",
-      "- Managed and maintained the IT infrastructure, including computers, printers, and various audiovisual tools.",
-      "- Coordinated and executed software and hardware upgrades, minimizing disruption to student operations.",
+      "Treasurer (Jun 2024 - Present)",
+      "Manage a $10K+ budget and oversee all financial activities and logistical coordination for a 1,000+-attendee convention, ensuring fiscal accuracy and alignment with organizational goals.", 
+      "-----------------------------------------------------", 
+      "Staff & Security Coordinator (Jan 2024 - Jun 2024)",
+      "Recruited, trained, and led 40+ volunteers and directed security operations to guarantee the safety and smooth execution of all convention activities.",
     ],
-    title: "IT Technician, IT Technician Manager",
-    company: "Stony Brook Univeristy",
-    date: "OCT 2023 - Present",
+    title: "Staff & Security Coordinator - Treasurer",
+    company: "Stony Brook Univeristy Brook Con",
+    date: "Jan 2023 - Present",
     id: 5,
   },
   {
     content: [
-      "Treasurer / JUN 2024 - PRESENT",
-      "- Managed a budget exceeding $10,000+ for a convention with over 1,000 attendees, ensuring all financial activities aligned with organizational goals and maintaining accurate records of all transactions.",
-      "- Oversaw general logistics and served as core executive of the convention, coordinating with various departments to ensure smooth execution of all activities.",
+      "President (May 2025 - Present)",
+      "As President, I serve as the chapter's official representative and ex-officio committee member, chair executive and general meetings with clear agendas, and collaborate with the board to launch initiatives and drive organizational goals.",
       "-----------------------------------------------------", 
-      "Staff and Security Coordinator / JAN 2024 - JUNE 2024",
-      "- Recruited, trained, and managed a team of over 40 volunteers, enhancing event efficiency and ensuring all operations ran smoothly.",
-      "- Led security operations for the convention, acting as the main point of contact for volunteers and ensuring the safety and security of all attendees and staff.",
-    
+      "Event Coordinator (Jan 2025 - May 2025)",
+      "In my role as Event Coordinator, I planned and executed professional and social events—overseeing venue, vendor and volunteer coordination—and led marketing efforts to boost attendance and engagement."
     ],
-    title: "Staff and Security Coordinator, Treasurer",
-    company: "Stony Brook Univeristy Brook Con",
-    date: "JAN 2023 - Present",
+    title: "Event Coordinator - President",
+    company: "Tau Beta Pi (NY Omicron)",
+    date: "Jan 2025 - Present",
     id: 6,
+  },
+    {
+    content: [
+      "Selected from a highly competitive applicant pool to engage in 10 weeks of pair programming and mentorship with a Google Software Engineer to strengthen foundational coding skills, enhance problem-solving abilities, and prepare for technical interviews.",
+    ],
+    title: "Apprentice",
+    company: "Basta/Google Software Engineering Program",
+    date: "Mar 2025 - Jun 2025",
+    id: 7,
   },
 ];
