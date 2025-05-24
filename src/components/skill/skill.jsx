@@ -72,30 +72,33 @@ const SkillTagCloud = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-  const currentContainer = containerRef.current;
-  const skills = [
-    "Python", "Java", "C/C++", "HTML/CSS", "JavaScript", "React.js",
-    "Flask", "FastAPI", "Numpy", "Pandas", "Jsoup", "Git",
-    "Algorithms", "Data Structures", "Multithreading", "Web Scraping",
-    "API Development", "System Fundamentals", "Agile Methodology", "Clean Code",
-  ];
+    const currentContainer = containerRef.current;
+    const skills = [
+      "Python", "Java", "C/C++", "HTML/CSS", "JavaScript", "React.js",
+      "Flask", "FastAPI", "Numpy", "Pandas", "Jsoup", "Git",
+      "Algorithms", "Data Structures", "Multithreading", "Web Scraping",
+      "API Development", "System Fundamentals", "Agile Methodology", "Clean Code",
+    ];
 
-  if (window.TagCloud && currentContainer) {
-    window.TagCloud(currentContainer, skills, {
-      radius: 200,
-      maxSpeed: "normal",
-      initSpeed: "fast",
-      direction: 135,
-      keep: true,
-    });
-  }
-
-  return () => {
-    if (currentContainer) {
-      currentContainer.innerHTML = "";
+    if (window.TagCloud && currentContainer) {
+      window.TagCloud(currentContainer, skills, {
+        radius: 200,
+        maxSpeed: "normal",
+        initSpeed: "fast",
+        direction: 135,
+        keep: true,
+      });
     }
-  };
-}, []);
+
+    return () => {
+      if (currentContainer) {
+        currentContainer.innerHTML = "";
+      }
+    };
+  }, []);
+
+  // ✅ You must return JSX!
+  return <div ref={containerRef} className="tagcloud-container"></div>;
 };
 
 
