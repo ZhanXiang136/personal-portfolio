@@ -68,42 +68,31 @@ const Skill = () => {
   );
 };
 
-const SkillTagCloud = () => {
-  const containerRef = useRef(null);
+useEffect(() => {
+  const currentContainer = containerRef.current;
+  const skills = [
+    "Python", "Java", "C/C++", "HTML/CSS", "JavaScript", "React.js",
+    "Flask", "FastAPI", "Numpy", "Pandas", "Jsoup", "Git",
+    "Algorithms", "Data Structures", "Multithreading", "Web Scraping",
+    "API Development", "System Fundamentals", "Agile Methodology", "Clean Code",
+  ];
 
-  useEffect(() => {
-    const currentContainer = containerRef.current;
-    const skills = [
-      "Python", "Java", "C/C++", "HTML/CSS", "JavaScript", "React.js",
-      "Flask", "FastAPI", "Numpy", "Pandas", "Jsoup", "Git",
-      "Algorithms", "Data Structures", "Multithreading", "Web Scraping", "API Development", "System Fundementals", "Agile Methodology", "Clean Code",
-    ];
+  if (window.TagCloud && currentContainer) {
+    window.TagCloud(currentContainer, skills, {
+      radius: 200,
+      maxSpeed: "normal",
+      initSpeed: "fast",
+      direction: 135,
+      keep: true,
+    });
+  }
 
-    if (window.TagCloud) {
-      window.TagCloud(containerRef.current, skills, {
-        radius: 200,
-        maxSpeed: "normal",
-        initSpeed: "fast",
-        direction: 135,
-        keep: true,
-      });
+  return () => {
+    if (currentContainer) {
+      currentContainer.innerHTML = "";
     }
-
-    return () => {
-      if (currentContainer) {
-        containerRef.current.innerHTML = "";
-      }
-    };
-  }, []);
-
-  return (
-    <div
-      ref={containerRef}
-      className="tagcloud"
-      style={{ width: "100%", height: "500px" }}
-    />
-  );
-};
+  };
+}, []);
 
 
 // const SkillContainer = () => {
