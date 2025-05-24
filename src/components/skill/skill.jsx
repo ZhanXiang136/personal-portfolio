@@ -72,6 +72,7 @@ const SkillTagCloud = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    const currentContainer = containerRef.current;
     const skills = [
       "Python", "Java", "C/C++", "HTML/CSS", "JavaScript", "React.js",
       "Flask", "FastAPI", "Numpy", "Pandas", "Jsoup", "Git",
@@ -89,7 +90,7 @@ const SkillTagCloud = () => {
     }
 
     return () => {
-      if (containerRef.current) {
+      if (currentContainer) {
         containerRef.current.innerHTML = "";
       }
     };
