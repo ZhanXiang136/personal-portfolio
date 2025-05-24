@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useMemo } from "react";
+import React, { useRef, useEffect } from "react";
 import "./skill.css";
 import FadeComponent from "../fadeInOutComponent/fadeInOutComponent";
 
