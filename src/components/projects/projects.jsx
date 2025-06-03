@@ -3,6 +3,8 @@ import PokemonBattle from "../../assets/pokemon-battle-sample.gif";
 import PokemonMenu from "../../assets/pokemon-main.png";
 import CodeOverFlowMaze from "../../assets/code-overflow-maze.png";
 import CodeOverFlowMazeSample from "../../assets/code-overflow-maze-sample.gif";
+import TicTacToe from "../../assets/tic-tac-toe.png";
+import TicTacToe_Game from "../../assets/tictactoe-play.png";
 import React from "react";
 import FadeComponent from "../fadeInOutComponent/fadeInOutComponent";
 
@@ -16,7 +18,7 @@ const ProjectCard = ({
   return (
     <FadeComponent direction="down">
       <div className="project-card">
-        <a href={url} alt={mainText}>
+        <a href={url} alt={mainText} target="_blank">
           <img src={backgroundImage} alt="Project Background" />
           <div className="overlay">
             <div className="text-content">{mainText}</div>
@@ -46,7 +48,13 @@ const projects = [
     hoverText: "Click Me",
     url: "https://github.com/dhuang6334/Code-Overflow",
   },
-  // Add more projects as needed
+   {
+    backgroundImage: TicTacToe,
+    mainText: "Tic Tac Toe AI",
+    hoverImage: TicTacToe_Game,
+    hoverText: "Click Me",
+    url: "https://tictactoe-ai-ha7p.onrender.com",
+  },
 ];
 
 const Projects = () => {
