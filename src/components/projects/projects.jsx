@@ -18,7 +18,7 @@ const ProjectCard = ({
   return (
     <FadeComponent direction="down">
       <div className="project-card">
-        <a href={url} alt={mainText} target="_blank">
+        <a href={url} alt={mainText} target="_blank" rel="noreferrer">
           <img src={backgroundImage} alt="Project Background" />
           <div className="overlay">
             <div className="text-content">{mainText}</div>
