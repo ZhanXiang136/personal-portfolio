@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Portfolio() {
+export default function StockTradingAI() {
   return (
     <div style={{ height: '100vh', margin: 0, padding: 0, backgroundColor: 'white' }}>
       <iframe
