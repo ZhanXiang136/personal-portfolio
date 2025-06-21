@@ -1,10 +1,10 @@
-import './app.css';
+// src/pages/Home.jsx
+import './Home.css';
 import { useEffect, useState } from "react";
-import Navbar from './navbar/navbar';
-import Loading from "./loading/loading";
+import Navbar from '../components/navbar/navbar';
+import Loading from "../components/loading/loading";
 
-
-export default function App() {
+export default function Home() {
   const [loading, setLoading] = useState(true)
     useEffect(() => {
         setTimeout(() => setLoading(false), 3300)
@@ -13,7 +13,7 @@ export default function App() {
         return <Loading/>
     }
   return (
-    <div className="App">
+    <div className="Home">
       <Navbar />
   </div>
   );
