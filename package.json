@@ -2,6 +2,7 @@
   "name": "personal-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/portfolio",
   "dependencies": {
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.7.8",
@@ -12,6 +13,7 @@
     "normalize.css": "^8.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.6.2",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
     "typewriter-effect": "^2.21.0",
