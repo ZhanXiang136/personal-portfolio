@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import './ambient.css';
 
-const particles = Array.from({ length: 16 }, (_, i) => ({
+const particles = Array.from({ length: 12 }, (_, i) => ({
   left: `${(i * 61 + 13) % 100}%`,
   top: `${(i * 37 + 7) % 100}%`,
   animationDelay: `${-i * 2.7}s`,

@@ -3,10 +3,10 @@ import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
 import FadeComponent from '../fadeInOutComponent/fadeInOutComponent';
 import './skill.css';
 
-const stack = ['Python', 'TypeScript', 'Kubernetes', 'React', 'FastAPI', 'Redis', 'PyTorch', 'MongoDB'];
+const orbitGroups = [['Python', 'TypeScript'], ['Kubernetes'], ['React'], ['FastAPI'], ['Redis'], ['PyTorch', 'MongoDB']];
 const groups = [
   { label: 'Languages', items: ['Python · Java · C / C++', 'SQL · JavaScript · TypeScript'] },
-  { label: 'Cloud & infrastructure', items: ['Kubernetes · Docker · AWS EC2', 'Linux · CI/CD · Ansible', 'Prometheus · Grafana'] },
+  { label: 'Cloud & infrastructure', items: ['Kubernetes · Docker', 'Linux · CI/CD · Ansible', 'Prometheus · Grafana'] },
   { label: 'AI & ML', items: ['PyTorch · FinBERT', 'Pandas · NumPy'] },
   { label: 'Frontend', items: ['React'] },
   { label: 'Signals', items: ['Lockheed Martin Code Quest Winner', 'National Cyber Scholar with Honors', 'Dean’s List: 2023–2026', 'GIAC Foundational Cybersecurity Technologies'] },
@@ -28,9 +28,9 @@ export default function Skill() {
   return <div className="skill">
     <FadeComponent direction="right"><motion.div ref={orbitRef} className={`skill-orbit ${visible ? 'orbit-running' : ''}`} aria-label="Technical toolkit" style={{ rotateX: tiltX, rotateY: tiltY }} onPointerMove={handlePointerMove} onPointerLeave={resetTilt}>
       <div className="orbit-core"><span>MAKE</span><span>THINGS</span><span>MOVE</span></div>
-      <div className="orbit-ring">
-        {stack.map((item, index) => <div className="orbit-track" style={{ '--angle': `${index * 45}deg` }} key={item}><span className={`orbit-tag tag-${index + 1}`}>{item}</span></div>)}
-      </div>
+      {orbitGroups.map((group, ringIndex) => <div className={`orbit-ring ring-${ringIndex + 1}`} key={ringIndex}>
+        {group.map((item, index) => <div className="orbit-track" style={{ '--angle': `${index * (360 / group.length)}deg` }} key={item}><span className={`orbit-tag tag-${ringIndex + 1}-${index + 1}`}>{item}</span></div>)}
+      </div>)}
     </motion.div></FadeComponent>
     <div className="skill-content">
       <FadeComponent><p className="skill-intro">From distributed services to sentiment models: tools I use to build, measure, and improve working systems.</p></FadeComponent>
