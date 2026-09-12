@@ -8,7 +8,7 @@ import Footer from '../footer/footer';
 import NeonArcade from '../neonArcade/neonArcade';
 import './navbar.css';
 
-const links = [['about', 'A Little About Me'], ['skills', 'Built With Curiosity'], ['timeline', 'Experience & Education'], ['projects', 'Projects'], ['arcade', 'A Little Detour'], ['contact', 'Contact']];
+const links = [['about', 'About'], ['skills', 'Skills'], ['timeline', 'Experience'], ['projects', 'Projects'], ['arcade', 'Arcade'], ['contact', 'Contact']];
 
 function SectionTitle({ number, title }) {
   return <div className="section-heading"><span className="section-kicker">{number}</span><h2>{title}</h2></div>;

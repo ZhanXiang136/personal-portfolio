@@ -2,8 +2,8 @@
 .navbar-scrolled { backdrop-filter: blur(14px); background: rgba(9, 11, 16, .78); border-bottom: 1px solid var(--line); }
 .wordmark { font-family: "Portfolio Display", Impact, sans-serif; font-size: 1.35rem; letter-spacing: .08em; }
 .wordmark span, .nav-resume span { color: var(--cyan); }
-.navbar { display: flex; gap: 24px; }
-.navLink, .nav-resume { color: var(--muted); font-size: .78rem; transition: color .2s ease; }
+.navbar { display: flex; gap: clamp(14px, 2vw, 24px); }
+.navLink, .nav-resume { color: var(--muted); font-size: .74rem; transition: color .2s ease; }
 .navLink:hover, .nav-resume:hover { color: var(--text); }
 .nav-resume { border-bottom: 1px solid var(--cyan); color: var(--text); padding: 0 0 4px; }
 @media (max-width: 700px) { .navbar { display: none; } .navbar-container { height: 64px; } }

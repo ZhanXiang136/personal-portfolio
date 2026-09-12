@@ -13,7 +13,7 @@
 
 .landing { background: radial-gradient(ellipse at 85% 32%, rgba(22, 139, 255, .18), transparent 45%), radial-gradient(ellipse at 12% 90%, rgba(110, 68, 255, .09), transparent 45%); }
 .landing::after { background: linear-gradient(90deg, transparent, var(--blue-electric), var(--cyan), transparent); bottom: 0; content: ''; height: 1px; left: 0; position: absolute; width: 100%; }
-.hero-grid { background-size: 72px 72px; opacity: .32; }
+.hero-grid { animation: gridDrift 26s linear infinite; background-size: 72px 72px; opacity: .32; }
 .hero-glow { background: radial-gradient(circle, rgba(0, 200, 255, .27), transparent 70%); filter: none; }
 .hero-status, .hero-index, .portrait-label { font-family: var(--mono); letter-spacing: .08em; }
 .hero-status { color: var(--cyan); }
@@ -26,11 +26,12 @@
 .hero-portrait { background: var(--panel); box-shadow: 0 0 65px rgba(22, 139, 255, .17); }
 .hero-portrait img { filter: grayscale(1) contrast(1.12); opacity: .85; }
 .hero-portrait::after { background: linear-gradient(180deg, transparent 40%, rgba(0, 152, 255, .4)), repeating-linear-gradient(0deg, transparent 0 3px, rgba(3, 6, 17, .16) 3px 4px); content: ''; inset: 0; pointer-events: none; position: absolute; }
-.portrait-ring { animation: none; border-color: var(--blue-bright); inset: -14px 14px; transform: rotate(-7deg); }
-.ring-two { border-color: var(--cyan); inset: 14px -14px; transform: rotate(5deg); }
+.portrait-ring { animation: spin 28s linear infinite; border-color: var(--blue-bright); inset: -14px 14px; transform: rotate(-7deg); }
+.ring-two { animation-direction: reverse; animation-duration: 20s; border-color: var(--cyan); inset: 14px -14px; transform: rotate(5deg); }
 .portrait-label { background: var(--cyan); color: var(--ink); z-index: 1; }
 
 .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .hero-play { color: var(--violet); font: .75rem var(--mono); transition: color .2s; }
 .hero-play:hover { color: var(--cyan); }
 @media (max-width: 520px) { .hero-actions { flex-direction: row; align-items: center; flex-wrap: wrap; } }
+@keyframes gridDrift { to { background-position: 72px 72px; } }
