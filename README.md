@@ -1,35 +1,38 @@
-# Zhan Xiang Zheng • Personal Portfolio
+# Zhan Xiang Zheng · Personal Portfolio
 
-[![Website Status](https://img.shields.io/website-up-down-green-red/https/shields.io.svg)](https://zhanxiangzheng.me/)  
-Live demo: https://zhanxiangzheng.me • Source: https://github.com/ZhanXiang136/personal-portfolio
+React portfolio with a neon theme, career timeline, projects, a memory game, and a browser adaptation of the Tic-Tac-Toe Minimax AI.
 
----
+## Development
 
-## 🚀 Overview
+Use Node 22.12 or newer in the Node 22 release line. `.nvmrc`, `.node-version`, and `netlify.toml` select Node 22 for development and Netlify builds.
 
-A single-page React application showcasing:
+```sh
+nvm install
+nvm use
+npm ci
+npm start
+```
 
-- **About**: Bio, education, and resume download  
-- **Skills & Awards**: Languages, frameworks, certifications  
-- **Timeline**: Education & work history  
-- **Projects**: Links to your key GitHub repos  
-- **Contact**: Form for visitors to message you  
+The development server binds to localhost. Restart or rebuild an existing Agent Runner after updating its Node environment; a running environment will not switch Node versions automatically.
 
----
+## Checks and deployment
 
-## 🛠 Tech Stack
+```sh
+npm run lint
+npm test
+npm run build
+npm run preview
+npm audit
+```
 
-- **Framework**: React (Create React App)  
-- **Language**: JavaScript (ES6+)  
-- **Styling**: CSS / CSS Modules  
-- **Forms**: (e.g.) EmailJS or backend endpoint  
-- **Deployment**: GitHub Pages / Vercel / Netlify  
+Vite builds the static site into `build/`. Deploy that directory. Netlify applies the security headers from `public/_headers` and the SPA rewrite from `public/_redirects`; other hosts need equivalent header/rewrite configuration. The preview command does not emulate Netlify response headers.
 
----
+Routes: `/` is the portfolio; `/StockTradingAI` embeds the external stock-trading app. The iframe has its own origin and sandbox restrictions.
 
-## 📥 Getting Started
+## Security and performance
 
-1. **Clone**  
-   ```bash
-   git clone https://github.com/ZhanXiang136/personal-portfolio.git
-   cd personal-portfolio
+See [SECURITY.md](SECURITY.md) for audit scope and security decisions.
+
+Animated GIF previews load only while their project cards are visible and hovered or focused. Background particles use CSS transforms rather than a continuous canvas redraw loop. The skill orbit pauses off-screen and on hover, and reduced-motion preferences are respected. `mugshot-web.jpg` is a smaller display copy; the original portrait remains available.
+
+If present, the ignored `node_modules.pre-security/` directory is the old, root-owned dependency backup. It is not used by builds or included in deployment.

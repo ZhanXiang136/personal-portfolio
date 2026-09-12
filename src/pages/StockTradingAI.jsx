@@ -6,6 +6,9 @@ export default function StockTradingAI() {
       <iframe
         src="https://stocktradingai.netlify.app"
         title="Stock Trading AI"
+        sandbox="allow-scripts allow-same-origin allow-forms"
+        referrerPolicy="no-referrer"
+        allow="camera 'none'; microphone 'none'; geolocation 'none'; payment 'none'"
         width="100%"
         height="100%"
         style={{

@@ -2,13 +2,13 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import NeonArcade, { createDeck } from './neonArcade';
 
 beforeEach(() => {
-  jest.useFakeTimers();
-  jest.spyOn(Math, 'random').mockReturnValue(.999);
+  vi.useFakeTimers();
+  vi.spyOn(Math, 'random').mockReturnValue(.999);
 });
 afterEach(() => {
-  jest.clearAllTimers();
-  jest.useRealTimers();
-  jest.restoreAllMocks();
+  vi.clearAllTimers();
+  vi.useRealTimers();
+  vi.restoreAllMocks();
 });
 const tile = number => screen.getByRole('button', { name: new RegExp(`^Tile ${number}:`) });
 const start = () => fireEvent.click(screen.getByRole('button', { name: /Start game/ }));
@@ -30,7 +30,7 @@ test('cards wait for start and mismatches lock a third selection until hidden', 
   fireEvent.click(tile(2));
   fireEvent.click(tile(3));
   expect(tile(3)).toHaveAttribute('aria-pressed', 'false');
-  act(() => jest.advanceTimersByTime(950));
+  act(() => vi.advanceTimersByTime(950));
   expect(tile(1)).toHaveAttribute('aria-pressed', 'false');
   expect(tile(2)).toHaveAttribute('aria-pressed', 'false');
   fireEvent.click(tile(3));
@@ -58,6 +58,6 @@ test('restart cancels a pending mismatch reset', () => {
   fireEvent.click(tile(2));
   fireEvent.click(screen.getByRole('button', { name: /Restart game/ }));
   fireEvent.click(tile(4));
-  act(() => jest.advanceTimersByTime(1000));
+  act(() => vi.advanceTimersByTime(1000));
   expect(tile(4)).toHaveAttribute('aria-pressed', 'true');
 });

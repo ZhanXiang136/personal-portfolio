@@ -8,7 +8,7 @@ import Footer from '../footer/footer';
 import NeonArcade from '../neonArcade/neonArcade';
 import './navbar.css';
 
-const links = [['about', 'About'], ['skills', 'Toolkit'], ['timeline', 'Journey'], ['projects', 'Work'], ['arcade', 'Play'], ['contact', 'Contact']];
+const links = [['about', 'A Little About Me'], ['skills', 'Built With Curiosity'], ['timeline', 'Experience & Education'], ['projects', 'Projects'], ['arcade', 'A Little Detour'], ['contact', 'Contact']];
 
 function SectionTitle({ number, title }) {
   return <div className="section-heading"><span className="section-kicker">{number}</span><h2>{title}</h2></div>;
@@ -32,11 +32,11 @@ export default function Navbar() {
     </header>
     <main>
       <Landing />
-      <section id="about" className="site-section"><SectionTitle number="01" title="A little about me" /><About /></section>
-      <section id="skills" className="site-section section-tint"><SectionTitle number="02" title="Built with curiosity" /><Skill /></section>
-      <section id="timeline" className="site-section"><SectionTitle number="03" title="Experience & education" /><Timeline /></section>
-      <section id="projects" className="site-section section-tint"><SectionTitle number="04" title="Selected projects" /><Projects /></section>
-      <section id="arcade" className="site-section"><SectionTitle number="05" title="A little detour" /><NeonArcade /></section>
+      <section id="about" className="site-section"><SectionTitle number="01" title="A Little About Me" /><About /></section>
+      <section id="skills" className="site-section section-tint"><SectionTitle number="02" title="Built With Curiosity" /><Skill /></section>
+      <section id="timeline" className="site-section"><SectionTitle number="03" title="Experience & Education" /><Timeline /></section>
+      <section id="projects" className="site-section section-tint"><SectionTitle number="04" title="Projects" /><Projects /></section>
+      <section id="arcade" className="site-section"><SectionTitle number="05" title="A Little Detour" /><NeonArcade /></section>
     </main>
     <section id="contact" className="site-section"><Footer /></section>
   </>;

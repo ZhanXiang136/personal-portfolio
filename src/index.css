@@ -16,7 +16,7 @@
   --blue-bright: #38bfff;
   --cyan: #50f5ff;
   --violet: #aa8aff;
-  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }

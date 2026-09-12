@@ -1,8 +1,8 @@
 import React from "react";
 import "./leftBar.css";
-import { ReactComponent as GithubSVG } from "../../assets/github.svg";
-import { ReactComponent as LinkedinSVG } from "../../assets/linkedin.svg";
-import { ReactComponent as EmailSVG } from "../../assets/email.svg";
+import GithubSVG from "../../assets/github.svg?react";
+import LinkedinSVG from "../../assets/linkedin.svg?react";
+import EmailSVG from "../../assets/email.svg?react";
 
 const LeftBar = ({scroll}) => {
   const scrollPosition = Math.min(scroll*.05, 25).toString() + "pt";

@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 import FadeComponent from '../fadeInOutComponent/fadeInOutComponent';
 import TicTacToe from '../ticTacToe/ticTacToe';
 import PokemonBattle from '../../assets/pokemon-battle-sample.gif';
@@ -40,6 +41,24 @@ const earlierProjects = [
   { title: 'Infinite Maze Runner', number: '05', tags: ['JavaScript', 'Procedural play', 'Team build'], image: Maze, preview: MazeSample, url: 'https://github.com/dhuang6334/Code-Overflow' },
 ];
 
+function EarlierProject({ project, index }) {
+  const ref = useRef(null);
+  const visible = useInView(ref);
+  const reducedMotion = useReducedMotion();
+  const [active, setActive] = useState(false);
+  return <FadeComponent direction={index ? 'left' : 'right'}>
+    <motion.a ref={ref} className="project-card" href={project.url} target="_blank" rel="noreferrer"
+      onPointerEnter={() => setActive(true)} onPointerLeave={() => setActive(false)}
+      onFocus={() => setActive(true)} onBlur={() => setActive(false)}>
+      <div className="project-image">
+        <img src={project.image} alt={`${project.title} screenshot`} loading="lazy" decoding="async" />
+        {active && visible && !reducedMotion && <img className="project-preview" src={project.preview} alt="" decoding="async" />}
+      </div>
+      <div className="project-meta"><span>{project.number}</span><div><h3>{project.title}</h3><p>{project.tags.join(' / ')}</p></div><b>↗</b></div>
+    </motion.a>
+  </FadeComponent>;
+}
+
 export default function Projects() {
   return <div className="project-section">{projects.map((project, index) =>
     <FadeComponent direction={index ? 'left' : 'right'} key={project.title}>
@@ -55,11 +74,8 @@ export default function Projects() {
       </motion.article>
     </FadeComponent>
   )}
-    {earlierProjects.map((project, index) => <FadeComponent direction={index ? 'left' : 'right'} key={project.title}>
-      <motion.a className="project-card" href={project.url} target="_blank" rel="noreferrer" whileHover="hover" whileFocus="hover" initial="rest">
-        <div className="project-image"><img src={project.image} alt={`${project.title} screenshot`} /><motion.img className="project-preview" src={project.preview} alt="" variants={{ rest: { opacity: 0, scale: 1.08 }, hover: { opacity: 1, scale: 1 } }} transition={{ duration: .35 }} /></div>
-        <div className="project-meta"><span>{project.number}</span><div><h3>{project.title}</h3><p>{project.tags.join(' / ')}</p></div><motion.b variants={{ rest: { x: 0 }, hover: { x: 7 } }}>↗</motion.b></div>
-      </motion.a>
-    </FadeComponent>)}
+    <div className="project-side-stack">
+      {earlierProjects.map((project, index) => <EarlierProject key={project.title} project={project} index={index} />)}
+    </div>
   </div>;
 }

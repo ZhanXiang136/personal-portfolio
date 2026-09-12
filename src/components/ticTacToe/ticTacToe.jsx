@@ -3,28 +3,33 @@ import './ticTacToe.css';
 
 const wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
-function winner(board) {
+export function winner(board) {
   const line = wins.find(([a, b, c]) => board[a] && board[a] === board[b] && board[a] === board[c]);
   if (line) return { mark: board[line[0]], line };
   return board.every(Boolean) ? { mark: 'D', line: [] } : null;
 }
 
-function minimax(board, turn) {
+function minimax(board, turn, cache) {
+  const key = board.map(cell => cell || '-').join('') + turn;
+  if (cache.has(key)) return cache.get(key);
   const result = winner(board);
   if (result) return result.mark === 'X' ? 1 : result.mark === 'O' ? -1 : 0;
   const scores = board.map((cell, index) => {
     if (cell) return null;
     const next = [...board]; next[index] = turn;
-    return minimax(next, turn === 'X' ? 'O' : 'X');
+    return minimax(next, turn === 'X' ? 'O' : 'X', cache);
   }).filter(score => score !== null);
-  return turn === 'X' ? Math.max(...scores) : Math.min(...scores);
+  const score = turn === 'X' ? Math.max(...scores) : Math.min(...scores);
+  cache.set(key, score);
+  return score;
 }
 
-function aiMove(board) {
+export function aiMove(board) {
+  const cache = new Map();
   const choices = board.map((cell, index) => {
     if (cell) return null;
     const next = [...board]; next[index] = 'X';
-    return { index, score: minimax(next, 'O') };
+    return { index, score: minimax(next, 'O', cache) };
   }).filter(Boolean);
   const best = Math.max(...choices.map(choice => choice.score));
   return choices.find(choice => choice.score === best)?.index;

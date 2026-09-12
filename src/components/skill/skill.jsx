@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import FadeComponent from '../fadeInOutComponent/fadeInOutComponent';
 import './skill.css';
 
@@ -12,10 +14,14 @@ const groups = [
 ];
 
 export default function Skill() {
+  const orbitRef = useRef(null);
+  const visible = useInView(orbitRef);
   return <div className="skill">
-    <FadeComponent direction="right"><div className="skill-orbit" aria-label="Technical toolkit">
-      <div className="orbit-core">MAKE<br />THINGS<br /><i>MOVE</i></div>
-      {stack.map((item, index) => <span className={`orbit-tag tag-${index + 1}`} key={item}>{item}</span>)}
+    <FadeComponent direction="right"><div ref={orbitRef} className={`skill-orbit ${visible ? 'orbit-running' : ''}`} aria-label="Technical toolkit">
+      <div className="orbit-core"><span>MAKE</span><span>THINGS</span><span>MOVE</span></div>
+      <div className="orbit-ring">
+        {stack.map((item, index) => <div className="orbit-track" style={{ '--angle': `${index * 45}deg` }} key={item}><span className={`orbit-tag tag-${index + 1}`}>{item}</span></div>)}
+      </div>
     </div></FadeComponent>
     <div className="skill-content">
       <FadeComponent><p className="skill-intro">From distributed services to sentiment models: tools I use to build, measure, and improve working systems.</p></FadeComponent>

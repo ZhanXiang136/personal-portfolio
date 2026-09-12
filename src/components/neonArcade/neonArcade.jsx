@@ -61,7 +61,7 @@ export default function NeonArcade() {
   return <div className="arcade">
     <div className="arcade-intro">
       <p className="arcade-eyebrow">SIDE QUEST / 001</p>
-      <h3>Sync the signals.</h3>
+      <h3>Sync The Signals.</h3>
       <p>A tiny memory game for your next brain break. Flip two tiles, find their matching symbols, and connect all six pairs in as few moves as you can.</p>
       <p className="arcade-instructions" id="arcade-instructions">Click or tap a tile. On a keyboard, use Tab to move and Enter or Space to flip. No timer, no rush.</p>
       <button type="button" className="arcade-start" onClick={start}>{!started ? 'Start game' : complete ? 'Play again' : 'Restart game'} <span aria-hidden="true">↗</span></button>

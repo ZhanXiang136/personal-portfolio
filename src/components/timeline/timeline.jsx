@@ -31,4 +31,4 @@ function JourneyColumn({ label, items }) {
   </div>;
 }
 
-export default function Timeline() { return <div className="journey"><JourneyColumn label="Experience" items={experience} /><JourneyColumn label="Education & leadership" items={education} /></div>; }
+export default function Timeline() { return <div className="journey"><JourneyColumn label="Experience" items={experience} /><JourneyColumn label="Education" items={education} /></div>; }

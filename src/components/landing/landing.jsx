@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useState } from 'react';
-import Mugshot from '../../assets/mugshot.jpg';
+import Mugshot from '../../assets/mugshot-web.jpg';
 import './landing.css';
 
 export default function Landing() {

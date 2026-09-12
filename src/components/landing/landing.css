@@ -14,7 +14,7 @@
 .landing { background: radial-gradient(ellipse at 85% 32%, rgba(22, 139, 255, .18), transparent 45%), radial-gradient(ellipse at 12% 90%, rgba(110, 68, 255, .09), transparent 45%); }
 .landing::after { background: linear-gradient(90deg, transparent, var(--blue-electric), var(--cyan), transparent); bottom: 0; content: ''; height: 1px; left: 0; position: absolute; width: 100%; }
 .hero-grid { background-size: 72px 72px; opacity: .32; }
-.hero-glow { background: radial-gradient(circle, rgba(0, 200, 255, .27), transparent 70%); filter: blur(20px); }
+.hero-glow { background: radial-gradient(circle, rgba(0, 200, 255, .27), transparent 70%); filter: none; }
 .hero-status, .hero-index, .portrait-label { font-family: var(--mono); letter-spacing: .08em; }
 .hero-status { color: var(--cyan); }
 .hero-status span { background: var(--cyan); box-shadow: 0 0 16px var(--cyan); }
@@ -33,6 +33,4 @@
 .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .hero-play { color: var(--violet); font: .75rem var(--mono); transition: color .2s; }
 .hero-play:hover { color: var(--cyan); }
-.hero-grid { animation: gridDrift 24s linear infinite; }
-@keyframes gridDrift { to { background-position: 72px 72px; } }
 @media (max-width: 520px) { .hero-actions { flex-direction: row; align-items: center; flex-wrap: wrap; } }
