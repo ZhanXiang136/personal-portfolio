@@ -1,36 +1,6 @@
-.about {
-  display: flex;
-  font-size: 1.2rem;
-  margin-top: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
+.about { align-items: center; display: grid; gap: clamp(42px, 8vw, 120px); grid-template-columns: minmax(220px, .7fr) 1fr; }.about-photo { position: relative; }.about-photo img { aspect-ratio: .78; object-fit: cover; width: 100%; }.about-photo::before { border: 1px solid var(--cyan); content: ''; inset: 20px -20px -20px 20px; position: absolute; }.about-photo span { background: var(--blue-bright); bottom: 0; color: var(--ink); font-size: .72rem; font-weight: 800; padding: 10px 14px; position: absolute; right: -25px; }.about-content { max-width: 620px; }.about-content p { color: var(--muted); font-size: 1.03rem; line-height: 1.75; margin: 0 0 22px; }.about-content .about-lede { color: var(--text); font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.35; }.about-facts { border-top: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); margin: 36px 0; padding-top: 18px; }.about-facts span { color: var(--muted); font-size: .76rem; }.about-facts b { color: var(--cyan); display: block; font-size: .72rem; margin-bottom: 7px; }.resume-link { border-bottom: 1px solid var(--cyan); display: inline-block; font-size: .9rem; padding-bottom: 7px; }.resume-link span { color: var(--cyan); font-size: 1.2rem; margin-left: 8px; } @media (max-width: 720px) { .about { grid-template-columns: 1fr; }.about-photo { max-width: 330px; }.about-photo::before { inset: 14px -14px -14px 14px; }.about-facts { grid-template-columns: 1fr 1fr; } }
 
-.about-photo {
-  padding: 0 3rem;
-}
-
-.about-image {
-  width: 350px;
-  border-radius: 100px;
-}
-
-.about-content {
-  padding: 0 3rem;
-  width: min(100vw, 750px);
-}
-
-
-@media screen and (max-width: 800px) {
-  .about-image {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .about-image {
-    width: 225px;
-  }
-}
+.about-photo::before { border-color: var(--blue-electric); box-shadow: 0 0 24px rgba(22, 139, 255, .12); }
+.about-photo span { background: var(--cyan); font-family: var(--mono); }
+.about-facts b { font-family: var(--mono); }
+.resume-link:hover { color: var(--cyan); }

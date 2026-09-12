@@ -1,45 +1,5 @@
-import "./footer.css";
-import FadeComponent from "../fadeInOutComponent/fadeInOutComponent";
-import { ReactComponent as GithubSVG } from "../../assets/github.svg";
-import { ReactComponent as LinkedinSVG } from "../../assets/linkedin.svg";
-import { ReactComponent as EmailSVG } from "../../assets/email.svg";
+import { motion } from 'framer-motion';
+import FadeComponent from '../fadeInOutComponent/fadeInOutComponent';
+import './footer.css';
 
-export default function Footer() {
-  return (
-    <FadeComponent direction="down">
-      <footer id="footer">
-        <section className="card">
-          <h1 className="footer-header">Contact Me</h1>
-          <form>
-            <label>Name</label>
-            <input type="text" />
-            <label>Email</label>
-            <input type="email" />
-            <label>Message</label>
-            <input type="message" />
-          </form>
-          <div className="bottom-row">
-            <button>Send message</button>
-            <div className="svg-logo">
-              <div className="github">
-                <a href="https://github.com/ZhanXiang136">
-                  <GithubSVG />
-                </a>
-              </div>
-              <div className="linkedin">
-                <a href="https://www.linkedin.com/in/zhan-xiang-zheng-9b962b219/">
-                  <LinkedinSVG />
-                </a>
-              </div>
-              <div className="email">
-                <a href="mailto:zhanxiangzheng136@gmail.com?subject=Mail from Personal Site">
-                  <EmailSVG />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </footer>
-    </FadeComponent>
-  );
-}
+export default function Footer() { return <footer><FadeComponent><p className="contact-kicker">06 / Have an idea?</p><h2>Let’s make<br /><i>something move.</i></h2><motion.a whileHover={{ scale: 1.03 }} whileTap={{ scale: .97 }} className="email-button" href="mailto:zhanxiangzheng136@gmail.com">zhanxiangzheng136@gmail.com <span>↗</span></motion.a><div className="footer-bottom"><span>© 2026 Zhan Xiang Zheng</span><div><a href="https://github.com/ZhanXiang136" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/zhanxiangzheng" target="_blank" rel="noreferrer">LinkedIn</a></div></div></FadeComponent></footer>; }

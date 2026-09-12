@@ -1,99 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { Link, Element, Events, scrollSpy } from "react-scroll";
-import About from "../about/about";
-import Skill from "../skill/skill";
-import Landing from "../landing/landing";
-import Timeline from "../timeline/timeline";
-import Projects from "../projects/projects";
-import Footer from "../footer/footer";
-import "./navbar.css";
-import LeftBar from "../leftBar/leftBar";
-import WindowDimensions from "../windowDimention/windowDimention";
-import FadeComponent from "../fadeInOutComponent/fadeInOutComponent";
+import { useEffect, useState } from 'react';
+import About from '../about/about';
+import Skill from '../skill/skill';
+import Landing from '../landing/landing';
+import Timeline from '../timeline/timeline';
+import Projects from '../projects/projects';
+import Footer from '../footer/footer';
+import NeonArcade from '../neonArcade/neonArcade';
+import './navbar.css';
 
-const Navbar = () => {
-  const { height } = WindowDimensions();
-  const [scrollPosition, setScrollPosition] = useState(0);
+const links = [['about', 'About'], ['skills', 'Toolkit'], ['timeline', 'Journey'], ['projects', 'Work'], ['arcade', 'Play'], ['contact', 'Contact']];
 
-  const handleScroll = () => {
-    const position = window.scrollY;
-    setScrollPosition(position);
-  };
+function SectionTitle({ number, title }) {
+  return <div className="section-heading"><span className="section-kicker">{number}</span><h2>{title}</h2></div>;
+}
 
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    Events.scrollEvent.register("begin", function () {
-      console.log("begin", arguments);
-    });
-
-    Events.scrollEvent.register("end", function () {
-      console.log("end", arguments);
-    });
-
-    scrollSpy.update();
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      Events.scrollEvent.remove("begin");
-      Events.scrollEvent.remove("end");
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const update = () => setScrolled(window.scrollY > 24);
+    update(); window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
   }, []);
 
-  return (
-    <>
-      <div className="navbar-container">
-        <nav
-          className={"navbar" + (scrollPosition !== 0 ? " navbar-down" : "")}
-        >
-          {navs.map((nav) => {
-            return <Nav nav={nav} key={nav.id} />;
-          })}
-        </nav>
-      </div>
-      {scrollPosition >= height * 0.6 ? <LeftBar scroll={scrollPosition - (height * 0.6)} /> : null}
-      {navs.map((nav) => {
-        return (
-          <Element name={nav.name}>
-            {nav.name !== "landing" ? (
-              <FadeComponent direction="up">
-                {" "}
-                <div className="header-container">
-                  <h1 className="header-title">{nav.name}</h1>
-                  <div className="header-line"></div>
-                </div>
-              </FadeComponent>
-            ) : null}
-            {nav.comp}
-          </Element>
-        );
-      })}
-    </>
-  );
-};
-
-const Nav = ({ nav }) => {
-  return (
-    <Link
-      activeClass="active"
-      to={nav.name}
-      spy={true}
-      smooth={true}
-      offset={-70}
-      duration={500}
-      className="navLink"
-    >
-      {nav.content}
-    </Link>
-  );
-};
-
-export default Navbar;
-
-const navs = [
-  { name: "landing", content: "Landing", id: 1, comp: <Landing /> },
-  { name: "about", content: "About", id: 2, comp: <About /> },
-  { name: "skills/accolades", content: "Skill", id: 3, comp: <Skill /> },
-  { name: "timeline", content: "Timeline", id: 4, comp: <Timeline /> },
-  { name: "projects", content: "Project", id: 5, comp: <Projects /> },
-  { name: "contact", content: "Contact", id: 6, comp: <Footer /> },
-];
+  return <>
+    <header className={`navbar-container ${scrolled ? 'navbar-scrolled' : ''}`}>
+      <a className="wordmark" href="#home" aria-label="Zhan Xiang Zheng home">ZXZ<span>.</span></a>
+      <nav className="navbar" aria-label="Primary navigation">
+        {links.map(([id, label]) => <a className="navLink" href={`#${id}`} key={id}>{label}</a>)}
+      </nav>
+      <a className="nav-resume" href={`${process.env.PUBLIC_URL}/Resume.pdf`} target="_blank" rel="noreferrer">Resume <span>↗</span></a>
+    </header>
+    <main>
+      <Landing />
+      <section id="about" className="site-section"><SectionTitle number="01" title="A little about me" /><About /></section>
+      <section id="skills" className="site-section section-tint"><SectionTitle number="02" title="Built with curiosity" /><Skill /></section>
+      <section id="timeline" className="site-section"><SectionTitle number="03" title="Experience & education" /><Timeline /></section>
+      <section id="projects" className="site-section section-tint"><SectionTitle number="04" title="Selected projects" /><Projects /></section>
+      <section id="arcade" className="site-section"><SectionTitle number="05" title="A little detour" /><NeonArcade /></section>
+    </main>
+    <section id="contact" className="site-section"><Footer /></section>
+  </>;
+}

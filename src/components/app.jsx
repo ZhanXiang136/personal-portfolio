@@ -1,20 +1,16 @@
 import './app.css';
-import { useEffect, useState } from "react";
+import { MotionConfig } from 'framer-motion';
 import Navbar from './navbar/navbar';
-import Loading from "./loading/loading";
+import Ambient from './ambient/ambient';
 
 
 export default function App() {
-  const [loading, setLoading] = useState(true)
-    useEffect(() => {
-        setTimeout(() => setLoading(false), 3300)
-    }, [])
-    if (loading) {
-        return <Loading/>
-    }
   return (
+    <MotionConfig reducedMotion="user">
     <div className="App">
+      <Ambient />
       <Navbar />
-  </div>
+    </div>
+    </MotionConfig>
   );
 }

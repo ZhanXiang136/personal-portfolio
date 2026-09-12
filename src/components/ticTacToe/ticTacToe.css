@@ -1,0 +1,11 @@
+.ttt-shell { display: grid; gap: 16px; }
+.ttt-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; max-width: 280px; }
+.ttt-cell { aspect-ratio: 1; background: #07182b; border: 1px solid #255077; color: var(--cyan); cursor: pointer; font: clamp(1.7rem, 5vw, 2.7rem) var(--mono); transition: transform .2s, border-color .2s, background .2s; }
+.ttt-cell:hover:not([aria-disabled="true"]) { background: #103958; border-color: var(--cyan); transform: translateY(-2px); }
+.ttt-cell[aria-disabled="true"] { cursor: default; }
+.ttt-o { color: var(--violet); }
+.ttt-win { background: #183655; border-color: var(--cyan); box-shadow: 0 0 18px #50f5ff44; }
+.ttt-footer { align-items: center; display: flex; gap: 12px; justify-content: space-between; max-width: 280px; }
+.ttt-footer > span { color: var(--muted); font: .65rem/1.5 var(--mono); }
+.ttt-reset { background: transparent; border: 1px solid var(--line); color: var(--cyan); cursor: pointer; font: .65rem var(--mono); padding: 7px 9px; }
+.ttt-reset:hover { border-color: var(--cyan); }

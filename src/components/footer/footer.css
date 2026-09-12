@@ -1,74 +1,10 @@
-footer {
-    font-size: 16px;
-    margin: 100px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100vw;
-}
+footer { padding-top: 12px; } .contact-kicker { color: var(--cyan); font-family: "Portfolio Display", Impact, sans-serif; font-size: .85rem; letter-spacing: .08em; margin: 0 0 24px; } footer h2 { font-size: clamp(3.4rem, 9vw, 8.5rem); font-weight: 700; letter-spacing: 0; line-height: .8; margin: 0 0 44px; } footer h2 i { color: var(--blue-bright); font-style: normal; }.email-button { background: var(--cyan); color: var(--ink); display: inline-block; font-size: clamp(.85rem, 2vw, 1.15rem); font-weight: 700; padding: 16px 20px; }.email-button span { color: var(--ink); font-size: 1.35rem; margin-left: 18px; }.footer-bottom { border-top: 1px solid var(--line); color: var(--muted); display: flex; font-size: .73rem; justify-content: space-between; margin-top: 100px; padding-top: 18px; }.footer-bottom div { display: flex; gap: 20px; }.footer-bottom a:hover { color: var(--text); } @media (max-width: 520px) { .footer-bottom { margin-top: 68px; } }
 
-footer section.card {
-    height: 380px;
-    width: min(750px, 80vw);
-    padding: 30px;
-    background-color: var(--blue-text-container);
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-.footer-header {
-    margin-bottom: 20px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="message"] {
-  background-color: var(--blue-text-info);
-  border: none;
-  border-radius: 5px;
-  color: #333;
-  font-size: 16px;
-  padding: 10px;
-  width: calc(100% - 20px);
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="message"]:focus {
-  outline: none;
-  box-shadow: 0 0 3px 3px rgba(31, 110, 235, 0.3);
-}
-
-div .bottom-row {
-    height: 20%;
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-}
-
-div .svg-logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.svg-logo svg {
-    width: 25px;
-    height: 25px;
-    fill: #777;
-}
-
-.svg-logo a {
-    margin-left: 15px;
-}
-
-
-.svg-logo a svg:hover {
-    transform: scale(1.25);
-    fill: white;
-    transition: transform .2s ease-in-out;
-}
+#contact { background: radial-gradient(ellipse at 20% 100%, rgba(22, 139, 255, .15), transparent 65%); }
+.contact-kicker { font-family: var(--mono); }
+footer h2 i { color: var(--blue-bright); text-shadow: 0 0 38px rgba(22, 139, 255, .2); }
+.email-button { background: linear-gradient(110deg, var(--cyan), var(--blue-bright)); border: 1px solid var(--cyan); box-shadow: 0 0 28px rgba(22, 139, 255, .18); }
+.email-button:hover { box-shadow: 0 0 40px rgba(22, 139, 255, .35); }
+.email-button span { color: var(--ink); }
+.footer-bottom a:hover { color: var(--cyan); }
+@media (max-width: 520px) { .email-button { max-width: 100%; overflow-wrap: anywhere; } .footer-bottom { flex-wrap: wrap; gap: 20px; } }
