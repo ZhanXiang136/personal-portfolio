@@ -73,7 +73,7 @@ export default function NeonArcade() {
           const found = matched.includes(card.id);
           const visible = flipped.includes(card.id) || found;
           return <button type="button" key={card.id} className={`signal-card ${visible ? 'signal-visible' : ''} ${found ? 'signal-matched' : ''}`} aria-label={`Tile ${index + 1}: ${found ? `matched ${card.symbol}` : visible ? card.symbol : 'hidden'}`} aria-pressed={visible} aria-disabled={!started || found || complete} onClick={() => reveal(card)}>
-            <span className="signal-symbol" aria-hidden="true">{visible ? card.symbol : '✦'}</span><span className="signal-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}{found ? ' / OK' : ''}</span>
+            <span className="signal-symbol" aria-hidden="true">{visible ? card.symbol : '✦'}</span><span className="signal-status" aria-hidden="true">{found ? 'OK' : ''}</span>
           </button>;
         })}
       </div>

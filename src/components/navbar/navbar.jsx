@@ -10,8 +10,8 @@ import './navbar.css';
 
 const links = [['about', 'About'], ['skills', 'Skills'], ['timeline', 'Experience'], ['projects', 'Projects'], ['arcade', 'Arcade'], ['contact', 'Contact']];
 
-function SectionTitle({ number, title }) {
-  return <div className="section-heading"><span className="section-kicker">{number}</span><h2>{title}</h2></div>;
+function SectionTitle({ title }) {
+  return <div className="section-heading"><h2>{title}</h2></div>;
 }
 
 export default function Navbar() {
@@ -32,11 +32,11 @@ export default function Navbar() {
     </header>
     <main>
       <Landing />
-      <section id="about" className="site-section"><SectionTitle number="01" title="A Little About Me" /><About /></section>
-      <section id="skills" className="site-section section-tint"><SectionTitle number="02" title="Built With Curiosity" /><Skill /></section>
-      <section id="timeline" className="site-section"><SectionTitle number="03" title="Experience & Education" /><Timeline /></section>
-      <section id="projects" className="site-section section-tint"><SectionTitle number="04" title="Projects" /><Projects /></section>
-      <section id="arcade" className="site-section"><SectionTitle number="05" title="A Little Detour" /><NeonArcade /></section>
+      <section id="about" className="site-section"><SectionTitle title="A Little About Me" /><About /></section>
+      <section id="skills" className="site-section section-tint"><SectionTitle title="Built With Curiosity" /><Skill /></section>
+      <section id="timeline" className="site-section"><SectionTitle title="Experience & Education" /><Timeline /></section>
+      <section id="projects" className="site-section section-tint"><SectionTitle title="Projects" /><Projects /></section>
+      <section id="arcade" className="site-section"><SectionTitle title="A Little Detour" /><NeonArcade /></section>
     </main>
     <section id="contact" className="site-section"><Footer /></section>
   </>;

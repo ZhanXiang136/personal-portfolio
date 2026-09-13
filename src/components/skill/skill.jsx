@@ -35,7 +35,7 @@ export default function Skill() {
     <div className="skill-content">
       <FadeComponent><p className="skill-intro">From distributed services to sentiment models: tools I use to build, measure, and improve working systems.</p></FadeComponent>
       <FadeComponent delay={.12}><div className="skill-columns">
-        {groups.map(({ label, items }) => <div key={label}><p className="skill-label"><span>{label}</span><span className="skill-count">{String(items.length).padStart(2, '0')}</span></p><ul>{items.map(item => <li key={item}>{item}</li>)}</ul></div>)}
+        {groups.map(({ label, items }) => <div key={label}><p className="skill-label"><span>{label}</span></p><ul>{items.map(item => <li key={item}>{item}</li>)}</ul></div>)}
       </div></FadeComponent>
     </div>
   </div>;

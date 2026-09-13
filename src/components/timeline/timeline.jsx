@@ -19,7 +19,7 @@ const education = [
 
 function JourneyColumn({ label, items }) {
   return <div className="journey-column">
-    <div className="journey-column-heading"><span className="journey-signal" />{label}<span>{String(items.length).padStart(2, '0')}</span></div>
+    <div className="journey-column-heading"><span className="journey-signal" />{label}</div>
     <div className="journey-list">
       {items.map((item, index) => <FadeComponent key={item.role} direction={index % 2 ? 'left' : 'right'} delay={index * .07}>
         <motion.article className="journey-card" whileHover={{ y: -6 }} transition={{ duration: .2 }}>

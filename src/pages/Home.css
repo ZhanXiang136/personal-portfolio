@@ -1,12 +1,10 @@
 .App { min-height: 100vh; overflow: clip; }
 .site-section { position: relative; padding: 130px max(24px, calc((100vw - 1180px) / 2)); }
 .section-heading { align-items: baseline; display: flex; gap: 20px; margin: 0 0 54px; }
-.section-kicker { color: var(--cyan); font-family: "Portfolio Display", Impact, sans-serif; font-size: .9rem; letter-spacing: .08em; }
 .section-heading h2 { color: var(--text); font-size: clamp(2.2rem, 5vw, 4.8rem); font-weight: 700; letter-spacing: 0; line-height: .92; margin: 0; }
 .section-heading::after { background: var(--line); content: ''; flex: 1; height: 1px; }
 @media (max-width: 640px) { .site-section { padding-top: 92px; padding-bottom: 92px; } .section-heading { gap: 12px; margin-bottom: 36px; } .section-heading::after { display: none; } }
 
-.section-kicker { font-family: var(--mono); text-shadow: 0 0 18px rgba(80, 245, 255, .35); }
 .section-heading::after { background: linear-gradient(90deg, var(--cyan), var(--line) 30%, transparent); }
 
 .App { isolation: isolate; }

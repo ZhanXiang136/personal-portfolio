@@ -15,7 +15,7 @@
 .signal-card:hover:not([aria-disabled="true"]) { transform: translateY(-3px); border-color: var(--cyan); box-shadow: 0 0 18px #168bff33; }
 .signal-card[aria-disabled="true"] { cursor: default; }
 .signal-symbol { font: clamp(1.1rem, 3vw, 2rem) var(--mono); }
-.signal-number { position: absolute; bottom: 6px; left: 7px; font: .5rem var(--mono); opacity: .7; }
+.signal-status { position: absolute; bottom: 6px; left: 7px; font: .5rem var(--mono); opacity: .7; }
 .signal-visible { background: #113958; color: var(--cyan); border-color: var(--cyan); }
 .signal-matched { background: #162742; border-color: var(--violet); color: #c7b4ff; }
 .arcade-message { color: var(--muted); font: .75rem/1.6 var(--mono); min-height: 2.4rem; margin: 20px 0 0; }
