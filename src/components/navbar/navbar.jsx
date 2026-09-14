@@ -33,10 +33,10 @@ export default function Navbar() {
     <main>
       <Landing />
       <section id="about" className="site-section"><SectionTitle title="A Little About Me" /><About /></section>
-      <section id="skills" className="site-section section-tint"><SectionTitle title="Built With Curiosity" /><Skill /></section>
+      <section id="skills" className="site-section section-tint"><SectionTitle title="Skills & Tools" /><Skill /></section>
       <section id="timeline" className="site-section"><SectionTitle title="Experience & Education" /><Timeline /></section>
       <section id="projects" className="site-section section-tint"><SectionTitle title="Projects" /><Projects /></section>
-      <section id="arcade" className="site-section"><SectionTitle title="A Little Detour" /><NeonArcade /></section>
+      <section id="arcade" className="site-section"><SectionTitle title="Arcade" /><NeonArcade /></section>
     </main>
     <section id="contact" className="site-section"><Footer /></section>
   </>;

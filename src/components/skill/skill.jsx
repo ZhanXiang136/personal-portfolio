@@ -33,7 +33,7 @@ export default function Skill() {
       </div>)}
     </motion.div></FadeComponent>
     <div className="skill-content">
-      <FadeComponent><p className="skill-intro">From distributed services to sentiment models: tools I use to build, measure, and improve working systems.</p></FadeComponent>
+      <FadeComponent><p className="skill-intro">Tools I’ve used at Google, at Stony Brook, and in my own projects.</p></FadeComponent>
       <FadeComponent delay={.12}><div className="skill-columns">
         {groups.map(({ label, items }) => <div key={label}><p className="skill-label"><span>{label}</span></p><ul>{items.map(item => <li key={item}>{item}</li>)}</ul></div>)}
       </div></FadeComponent>
